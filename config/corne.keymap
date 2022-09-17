@@ -203,8 +203,8 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 
                                         bindings = <
                 &none   &kp W  &kp L  &kp R  &kp B      &kp Z                                     &kp SEMICOLON  &kp Q  &kp U  &kp D  &kp J  &none
-                &none   &kp S  &kp H  &kp N  &kp T      &comma_lpar                               &dot_rpar   &kp A  &kp E  &kp O  &kp I  &STERLING   
-                &none   &kp F  &kp M  &kp V  &kp C      &kp SLASH                                 &kp G  &kp P  &kp X  &kp K  &kp Y  &EURO   
+                &none   &kp S  &kp H  &kp N  &kp T      &comma_lpar                               &dot_rpar   &kp A  &kp E  &kp O  &kp I  &sterling   
+                &none   &kp F  &kp M  &kp V  &kp C      &kp SLASH                                 &kp G  &kp P  &kp X  &kp K  &kp Y  &euro   
                                              &to L_MAIN &mo NAVIGATION  &to L_MAIN      &kp BSPC  &kp SPACE  &kp BSPC  
                         >;
                 };
