@@ -23,7 +23,7 @@
 
 //Enough time for me to use sticky modifiers
 &sk {
-     release-after-ms = <2000>;
+     release-after-ms = <3000>;
      quick-release;
 };
 
@@ -39,7 +39,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 };
 &mwh {    
         time-to-max-speed-ms = <2000>;
-        acceleration-exponent=<0>;
+        acceleration-exponent=<1>;
 };
 
 
@@ -86,6 +86,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 
         macros {
                 
+        /*
                 //Macro to type £
                 sterling: sterling {
                 label = "STERLING";
@@ -113,6 +114,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         , <&macro_release &kp LALT>
                         ;
                 };
+        */
 
         };
 
@@ -163,7 +165,8 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         bindings = <&kp PERCENT>, <&kp KP_DIVIDE>;
                         mods = <(MOD_LSFT)>;
                 };
-               
+
+/*               
                 //Mod-Morph to input # or (with shift) £ 
                 hash_sterling: hash_sterling {
                         compatible = "zmk,behavior-mod-morph";
@@ -181,7 +184,8 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         bindings = <&kp DOLLAR>, <&euro>;
                         mods = <(MOD_LSFT)>;
                 };
-                
+*/
+
         };
 	
        
@@ -196,14 +200,14 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 //              |    |  w  |  l  |  r  |  b   |  z      |             | ;: |  q  |  u  |  d  |  j  |    |
 //              |    |     |   Shift   |      |         |             |    |     |  Lock Computer  |    |
 //
-//              |    |  s  |  h  |  n  |  t   |  ,(     |             | .) |  a  |  e  |  o  |  i  |TEST|
-//              |    |  f  |  m  |  v  |  c   |  /?     |             | g  |  p  |  x  |  k  |  y  |TEST|
+//              |    |  s  |  h  |  n  |  t   |  ,(     |             | .) |  a  |  e  |  o  |  i  |    |
+//              |    |  f  |  m  |  v  |  c   |  /?     |             | g  |  p  |  x  |  k  |  y  |    |
 //                                     |Layer+|NavMoment|Layer+| |Bspc|Space|Bspc| 
 
                                         bindings = <
                 &none   &kp W  &kp L  &kp R  &kp B      &kp Z                                     &kp SEMICOLON  &kp Q  &kp U  &kp D  &kp J  &none
-                &none   &kp S  &kp H  &kp N  &kp T      &comma_lpar                               &dot_rpar   &kp A  &kp E  &kp O  &kp I  &sterling   
-                &none   &kp F  &kp M  &kp V  &kp C      &kp SLASH                                 &kp G  &kp P  &kp X  &kp K  &kp Y  &euro   
+                &none   &kp S  &kp H  &kp N  &kp T      &comma_lpar                               &dot_rpar   &kp A  &kp E  &kp O  &kp I  &none   
+                &none   &kp F  &kp M  &kp V  &kp C      &kp SLASH                                 &kp G  &kp P  &kp X  &kp K  &kp Y  &none   
                                              &to L_MAIN &mo NAVIGATION  &to L_MAIN      &kp BSPC  &kp SPACE  &kp BSPC  
                         >;
                 };
@@ -237,7 +241,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         bindings = <
                         &none   &kp GRAVE       &comma_lpar    &dot_rpar      &kp SQT        &kp BACKSLASH                             &kp SEMI  &kp LBKT  &kp MINUS  &kp EQUAL  &kp RBKT  &none   
                         &none   &kp N1          &kp N2         &kp N3         &kp N4         &kp N5                                    &kp N6  &kp N7  &kp N8  &N9_LT   &N0_GT   &none   
-                        &none   &kp EXCLAMATION &kp AT         /*&kp HASH &kp DOLLAR*/ &hash_sterling &dollar_euro   &percent_divide                           &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LESS_THAN  &kp GREATER_THAN  &none   
+                        &none   &kp EXCLAMATION &kp AT         &kp HASH &kp DOLLAR /*&hash_sterling &dollar_euro */   &percent_divide                           &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LESS_THAN  &kp GREATER_THAN  &none   
                                                                               &to L_MAIN     &mo NAVIGATION  &to L_MAIN      &kp BSPC  &kp SPACE  &kp BSPC  
                         >;
                 };
@@ -251,8 +255,8 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 //                                |Layer+   |NavMoment|Layer+| |Bspc|Space|Bspc      | 
 
                         bindings = <
-                        &none   &kp ESC    &none   &none     &mkp LCLK   &none                                    &none   &none                 &mmv MOVE_VERT(-3500)   &none                  &none                &none   
-                        &none   &sk LCTRL  &kp TAB &sk LALT  &sk LSHIFT  &sk LGUI                                 &none   &mmv MOVE_HOR(-3500)  &mmv MOVE_VERT(3500)  &mmv MOVE_HOR(3500)    &mkp RCLK            &none   
+                        &none   &kp ESC    &none   &none     &mkp LCLK   &none                                    &none   &none                 &mmv MOVE_VERT(-350)   &none                  &none                &none   
+                        &none   &sk LCTRL  &kp TAB &sk LALT  &sk LSHIFT  &sk LGUI                                 &none   &mmv MOVE_HOR(-350)  &mmv MOVE_VERT(350)  &mmv MOVE_HOR(350)    &mkp RCLK            &none   
                         &none   &none      &none   &none     &none       &none                                    &none   &mwh SCROLL_HOR(-15)  &mwh SCROLL_VERT(15)   &mwh SCROLL_VERT(-15)  &mwh SCROLL_HOR(15)  &none   
                                                              &to L_MAIN  &mo NAVIGATION  &to L_MAIN     &kp BSPC  &kp SPACE  &kp BSPC  
                         >;
