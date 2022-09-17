@@ -108,10 +108,9 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                 wait-ms = <20>;
                 tap-ms = <20>;
                 bindings
-                        = <&sk LALT &kp KP_N0 &kp KP_N1 &kp KP_N2 &kp KP_N8>
-                //        = <&macro_press   &kp LALT>
-                //        , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N2 &kp KP_N8>
-                //        , <&macro_release &kp LALT>
+                        = <&macro_press   &kp LALT>
+                        , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N2 &kp KP_N8>
+                        , <&macro_release &kp LALT>
                         ;
                 };
 
