@@ -202,7 +202,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 //                                     |Layer+|NavMoment|Layer+| |Bspc|Space|Bspc| 
 
                                         bindings = <
-                &none   &kp W  &kp L  &kp R  &kp B      &kp Z                                     &kp SEMICOLON  &kp Q  &kp U  &kp D  &kp J  &kp LA(KP_N0 KP_N1 KP_N6 KP_N3)   
+                &none   &kp W  &kp L  &kp R  &kp B      &kp Z                                     &kp SEMICOLON  &kp Q  &kp U  &kp D  &kp J  &kp LA(KP_N0, KP_N1, KP_N6, KP_N3)   
                 &none   &kp S  &kp H  &kp N  &kp T      &comma_lpar                               &dot_rpar   &kp A  &kp E  &kp O  &kp I  &STERLING   
                 &none   &kp F  &kp M  &kp V  &kp C      &kp SLASH                                 &kp G  &kp P  &kp X  &kp K  &kp Y  &EURO   
                                              &to L_MAIN &mo NAVIGATION  &to L_MAIN      &kp BSPC  &kp SPACE  &kp BSPC  
