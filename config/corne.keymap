@@ -56,7 +56,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         combo_shift {
                                 timeout-ms = <20>;
                                 key-positions = <2 3>;
-                                layers = <0 3>;
+                                layers = <LETTERS NUMBERS>;
                                 bindings = <&sk LSHFT>;                      
                         };
 
@@ -70,14 +70,14 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         combo_reset_keyboard {
                                 timeout-ms = <20>;
                                 key-positions = <18 19>;
-                                layers = <6>;
+                                layers = <BLUETOOTH>;
                                 bindings = <&reset>;                      
                         };
 
                         combo_bootloader {
                                 timeout-ms = <20>;
                                 key-positions = <30 31>;
-                                layers = <6>;
+                                layers = <BLUETOOTH>;
                                 bindings = <&bootloader>;                      
                         };
 
