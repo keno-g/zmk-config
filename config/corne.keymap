@@ -165,12 +165,12 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         mods = <(MOD_LSFT)>;
                 };
                
-/*                //Mod-Morph to input # or (with shift) £ 
+                //Mod-Morph to input # or (with shift) £ 
                 hash_sterling: hash_sterling {
                         compatible = "zmk,behavior-mod-morph";
                         label = "&HASH_STERLING";
                         #binding-cells = <0>;
-                        bindings = <&kp HASH>, <&STERLING>;
+                        bindings = <&kp HASH>, <&sterling>;
                         mods = <(MOD_LSFT)>;
                 };
                 
@@ -179,10 +179,10 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         compatible = "zmk,behavior-mod-morph";
                         label = "&DOLLAR_EURO";
                         #binding-cells = <0>;
-                        bindings = <&kp DOLLAR>, <&EURO>;
+                        bindings = <&kp DOLLAR>, <&euro>;
                         mods = <(MOD_LSFT)>;
                 };
-*/                
+                
         };
 	
        
@@ -254,7 +254,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         bindings = <
                         &none   &kp GRAVE       &comma_lpar    &dot_rpar      &kp SQT        &kp BACKSLASH                             &kp SEMI  &kp LBKT  &kp MINUS  &kp EQUAL  &kp RBKT  &none   
                         &none   &kp N1          &kp N2         &kp N3         &kp N4         &kp N5                                    &kp N6  &kp N7  &kp N8  &N9_LT   &N0_GT   &none   
-                        &none   &kp EXCLAMATION &kp AT         &kp HASH &kp DOLLAR /*&hash_sterling &dollar_euro*/   &percent_divide                           &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LESS_THAN  &kp GREATER_THAN  &none   
+                        &none   &kp EXCLAMATION &kp AT         /*&kp HASH &kp DOLLAR*/ &hash_sterling &dollar_euro   &percent_divide                           &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LESS_THAN  &kp GREATER_THAN  &none   
                                                                               &to L_MAIN     &trans  &to L_MAIN      &kp BSPC  &kp SPACE  &kp BSPC  
                         >;
                 };
@@ -306,7 +306,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         &none   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR                                &none   &none   &none   &none   &none   &none   
                         &none   &bt BT_SEL 4    &none         &none         &none         &none                                     &none   &none   &none   &none   &none   &none
                         &none   &none           &none         &none         &none         &none                                     &none   &none   &none   &none   &none   &none   
-                                                                            &to L_MAIN    &transs  &to L_MAIN      &kp BSPC  &kp SPACE  &kp BSPC  
+                                                                            &to L_MAIN    &trans  &to L_MAIN      &kp BSPC  &kp SPACE  &kp BSPC  
                         >;
                 };
 
