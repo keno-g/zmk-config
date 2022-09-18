@@ -35,7 +35,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 // Mouse movement and mouse wheel speed and acceleration settings
 &mmv {    
         time-to-max-speed-ms = <1000>;
-        acceleration-exponent=<16>;
+        acceleration-exponent=<8>;
 };
 &mwh {    
         time-to-max-speed-ms = <2000>;
@@ -255,8 +255,8 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 //                                |Layer+   |NavMoment|Layer+| |Bspc|Space|Bspc      | 
 
                         bindings = <
-                        &none   &kp ESC    &none   &none     &mkp LCLK   &none                                    &none   &none                 &mmv MOVE_VERT(-350)   &none                  &none                &none   
-                        &none   &sk LCTRL  &kp TAB &sk LALT  &sk LSHIFT  &sk LGUI                                 &none   &mmv MOVE_HOR(-350)  &mmv MOVE_VERT(350)  &mmv MOVE_HOR(350)    &mkp RCLK            &kp LG(D)   
+                        &none   &kp ESC    &none   &none     &mkp LCLK   &none                                    &none   &none                 &mmv MOVE_VERT(-700)   &none                  &none                &none   
+                        &none   &kp LCTRL  &kp TAB &kp LALT  &kp LSHIFT  &kp LGUI                                 &none   &mmv MOVE_HOR(-700)  &mmv MOVE_VERT(700)  &mmv MOVE_HOR(700)    &mkp RCLK            &kp LG(D)   
                         &none   &none      &none   &none     &none       &none                                    &none   &mwh SCROLL_HOR(-15)  &mwh SCROLL_VERT(15)   &mwh SCROLL_VERT(-15)  &mwh SCROLL_HOR(15)  &none   
                                                              &to L_MAIN  &mo NAVIGATION  &to L_MAIN     &kp BSPC  &kp SPACE  &kp BSPC  
                         >;
@@ -271,7 +271,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 //                                        |Layer+|NavMoment|Layer+| |Bspc|Space|Bspc| 
                         bindings = <
                         &none   &kp F1     &kp F2  &kp F3    &kp F4      &kp F5                                    &kp C_BRI_DN  &kp C_BRI_UP  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none   
-                        &none   &sk LCTRL  &kp TAB &sk LALT  &sk LSHIFT  &sk LGUI                                  &none         &none         &none       &none         &none         &kp LG(D)   
+                        &none   &kp LCTRL  &kp TAB &kp LALT  &kp LSHIFT  &kp LGUI                                  &none         &none         &none       &none         &none         &kp LG(D)   
                         &none   &kp F6     &kp F7  &kp F8    &kp F9      &kp F10                                   &kp LS(F10)   &kp F11       &kp F12     &none         &none         &none   
                                                              &to L_MAIN  &mo NAVIGATION  &to L_MAIN     &kp BSPC   &kp SPACE  &kp BSPC  
                         >;
@@ -307,7 +307,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 
                         bindings = <
                         &none   &kp ESC    &kp LC(Y)  &kp LC(A)  &caps_word  &kp LC(Z)                                   &kp INS     &kp F2     &kp UP    &kp DEL    &none    &none   
-                        &none   &sk LCTRL  &kp TAB    &sk LALT   &sk LSHIFT  &sk LGUI                                    &kp ENTER   &kp LEFT   &kp DOWN  &kp RIGHT  &none    &kp LG(D)   
+                        &none   &kp LCTRL  &kp TAB    &kp LALT   &kp LSHIFT  &kp LGUI                                    &kp ENTER   &kp LEFT   &kp DOWN  &kp RIGHT  &none    &kp LG(D)   
                         &none   &kp LC(Z)  &kp LC(X)  &kp LC(V)  &kp LC(C)   &kp GRAVE                                   &kp LS(F10) &kp HOME   &kp PG_UP &kp PG_DN  &kp END  &none   
                                                                          &to L_MAIN  &mo NAVIGATION  &to L_MAIN      &kp BSPC    &kp SPACE  &kp BSPC  
                         >;
