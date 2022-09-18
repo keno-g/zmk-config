@@ -34,7 +34,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 
 // Mouse movement and mouse wheel speed and acceleration settings
 &mmv {    
-        time-to-max-speed-ms = <1000>;
+        time-to-max-speed-ms = <3000>;
         acceleration-exponent=<8>;
 };
 &mwh {    
@@ -255,8 +255,8 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 //                                |Layer+   |NavMoment|Layer+| |Bspc|Space|Bspc      | 
 
                         bindings = <
-                        &none   &kp ESC    &none   &none     &mkp LCLK   &none                                    &none   &none                 &mmv MOVE_VERT(-700)   &none                  &none                &none   
-                        &none   &kp LCTRL  &kp TAB &kp LALT  &kp LSHIFT  &kp LGUI                                 &none   &mmv MOVE_HOR(-700)  &mmv MOVE_VERT(700)  &mmv MOVE_HOR(700)    &mkp RCLK            &kp LG(D)   
+                        &none   &kp ESC    &none   &none     &mkp LCLK   &none                                    &none   &none                 &mmv MOVE_VERT(-3500)   &none                  &none                &none   
+                        &none   &kp LCTRL  &kp TAB &kp LALT  &kp LSHIFT  &kp LGUI                                 &none   &mmv MOVE_HOR(-3500)  &mmv MOVE_VERT(3500)  &mmv MOVE_HOR(3500)    &mkp RCLK            &kp LG(D)   
                         &none   &none      &none   &none     &none       &none                                    &none   &mwh SCROLL_HOR(-15)  &mwh SCROLL_VERT(15)   &mwh SCROLL_VERT(-15)  &mwh SCROLL_HOR(15)  &none   
                                                              &to L_MAIN  &mo NAVIGATION  &to L_MAIN     &kp BSPC  &kp SPACE  &kp BSPC  
                         >;
