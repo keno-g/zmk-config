@@ -35,7 +35,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 // Mouse movement and mouse wheel speed and acceleration settings
 &mmv {    
         time-to-max-speed-ms = <1000>;
-        acceleration-exponent=<8>;
+        acceleration-exponent=<32>;
 };
 &mwh {    
         time-to-max-speed-ms = <2000>;
