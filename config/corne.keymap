@@ -22,8 +22,8 @@
 
 &lt {  // layer tap config
     flavor = "balanced";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <175>;      // double-tap + hold repeats tap-key
+    tapping-term-ms = <250>;
+    quick-tap-ms = <240>;      // double-tap + hold repeats tap-key
 };
 
 /*
