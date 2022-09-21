@@ -179,6 +179,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                 nav_mo: nav_mo {
                         compatible = "zmk,behavior-hold-tap";
                         label = "&NAV_MO";
+                        #binding-cells = <2>;
                         flavor = "balanced";
                         tapping-term-ms = <200>;
                         quick-tap-ms = <175>;
