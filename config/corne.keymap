@@ -255,17 +255,17 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                 numbers {
 //               NUMBERS     
 //              __________________________________________________________________________________________
-//              |     | ` ~ | , ( | . ) | ' "  |  \ |    |             | ; : | [ { | - _ | = + | ] } |    |
+//              |     | 1 ! | 2 @ | 3 # | 4 $  |  5 %    |             | 6 ^ | 7 & | 8 * | 9 < | 0 > |    |
 //              |     |     |   Shift   |      |         |             |     |     |     |     |     |    |
 //
-//              |     | 1 ! | 2 @ | 3 # | 4 $  |  5 %    |             | 6 ^ | 7 & | 8 * | 9 < | 0 > |    |
-//              |     |  !  |  @  | # £ | $ €  |  % /    |             |  ^  |  &  |  *  |  <  |  >  |    |
+//              |     |Ctrl | Alt |Shift|  Tab |   Win   |             |     |     |     |     |     |    |
+//              |     | ` ~ | , ( | . ) | ' "  |  \ |    |             | ; : | [ { | - _ | = + | ] } |    |
 //                                     |Layer+|NavMoment|Layer+| |Bspc|Space|Bspc| 
 
                         bindings = <
-                        &none   &kp GRAVE       &comma_lpar    &dot_rpar      &kp SQT        &kp BACKSLASH                             &kp SEMI  &kp LBKT  &kp MINUS  &kp EQUAL  &kp RBKT  &none   
-                        &none   &kp N1          &kp N2         &kp N3         &kp N4         &kp N5                                    &kp N6  &kp N7  &kp N8  &N9_LT   &N0_GT   &kp LG(D)   
-                        &none   &kp EXCLAMATION &kp AT         &kp HASH &kp DOLLAR /*&hash_sterling &dollar_euro*/    &percent_divide                           &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LESS_THAN  &kp GREATER_THAN  &none   
+                        &none   &kp N1          &kp N2         &kp N3         &kp N4         &kp N5                                    &kp N6    &kp N7    &kp N8     &N9_LT    &N0_GT   &none   
+                        &none   &kp LCTRL  &kp LALT &kp LSHIFT &kp TAB        &kp LGUI                                                 &none     &none     &none      &none     &none    &kp LG(D)    
+                        &none   &kp GRAVE       &comma_lpar    &dot_rpar      &kp SQT        &kp BACKSLASH                             &kp SEMI  &kp LBKT  &kp MINUS  &kp EQUAL &kp RBKT &none   
                                          &lt NUMBERS LETTERS  &nav_mo NAVIGATION NAVIGATION  &lt NUMBERS LETTERS      &lt MOUSE BSPC  &lt F_MEDIA SPACE  &lt MOUSE BSPC
                         >;
                 };
