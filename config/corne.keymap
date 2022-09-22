@@ -280,7 +280,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                 &none   &kp W  &kp L  &kp R  &kp B      &kp Z                                     &kp SEMICOLON  &kp Q  &kp U  &kp D  &kp J  &none
                 &none   &kp S  &kp H  &kp N  &kp T      &comma_lpar                               &dot_rpar   &kp A  &kp E  &kp O  &kp I  &kp LG(D)
                 &none   &kp F  &kp M  &kp V  &kp C      &kp SLASH                                 &kp G  &kp P  &kp X  &kp K  &kp Y  &none   
-                                             &nav_letter  &lt NUMBERS NUMBERS    &F_media_bspc &mouse_space 
+                                        &none &nav_letter  &lt NUMBERS NUMBERS    &F_media_bspc &mouse_space &none
                         >;
                 };
 
@@ -315,7 +315,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         &none   &kp N1          &kp N2         &kp N3         &kp N4         &kp N5                                    &kp N6    &kp N7    &kp N8     &N9_LT    &N0_GT   &none   
                         &none   &kp LCTRL  &kp LALT &kp LSHIFT &kp TAB        &kp LGUI                                                 &none     &none     &none      &none     &none    &kp LG(D)    
                         &none   &kp GRAVE       &comma_lpar    &dot_rpar      &kp SQT        &kp BACKSLASH                             &kp SEMI  &kp LBKT  &kp MINUS  &kp EQUAL &kp RBKT &none   
-                                             &nav_letter  &lt NUMBERS NUMBERS    &F_media_bspc &mouse_space 
+                                        &none &nav_letter  &lt NUMBERS NUMBERS    &F_media_bspc &mouse_space &none
                         >;
                 };
 
@@ -331,7 +331,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         &none   &kp ESC    &none    &none      &mkp LCLK   &none                                    &none   &none                 &mmv MOVE_VERT(-1000)   &none                  &none                &none   
                         &none   &kp LCTRL  &kp LALT &kp LSHIFT &kp TAB     &kp LGUI                                 &none   &mmv MOVE_HOR(-1000)  &mmv MOVE_VERT(1000)  &mmv MOVE_HOR(1000)    &mkp RCLK            &kp LG(D)   
                         &none   &none      &none    &none      &none       &none                                    &none   &mwh SCROLL_HOR(-15)  &mwh SCROLL_VERT(15)   &mwh SCROLL_VERT(-15)  &mwh SCROLL_HOR(15)  &none   
-                                             &nav_letter  &lt NUMBERS NUMBERS    &F_media_bspc &mouse_space 
+                                        &none &nav_letter  &lt NUMBERS NUMBERS    &F_media_bspc &mouse_space &none
                         >;
                 };
 
@@ -347,7 +347,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         &none   &kp F1     &kp F2   &kp F3     &kp F4      &kp F5                                    &kp C_BRI_DN  &kp C_BRI_UP  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none   
                         &none   &kp LCTRL  &kp LALT &kp LSHIFT &kp TAB     &kp LGUI                                  &none         &none         &none       &none         &none         &kp LG(D)   
                         &none   &kp F6     &kp F7   &kp F8     &kp F9      &kp F10                                   &kp LS(F10)   &kp F11       &kp F12     &none         &none         &none   
-                                             &nav_letter  &lt NUMBERS NUMBERS    &F_media_bspc &mouse_space 
+                                        &none &nav_letter  &lt NUMBERS NUMBERS    &F_media_bspc &mouse_space &none
                         >;
                 };
 
@@ -367,7 +367,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         &none   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR                                &none   &none   &none   &none   &none   &none   
                         &none   &bt BT_SEL 4    &none         &none         &none         &none                                     &none   &none   &none   &none   &none   &kp LG(D)
                         &none   &none           &none         &none         &none         &none                                     &none   &none   &none   &none   &none   &none   
-                                             &nav_letter  &lt NUMBERS NUMBERS    &F_media_bspc &mouse_space 
+                                        &none &nav_letter  &lt NUMBERS NUMBERS    &F_media_bspc &mouse_space &none
                         >;
                 };
 
@@ -383,7 +383,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         &none   &kp ESC    &caps_word &kp LC(A)  &kp LC(Y)   &kp LC(Z)                                   &kp INS     &kp F2     &kp UP    &kp DEL    &none    &none   
                         &none   &kp LCTRL  &kp LALT   &kp LSHIFT &kp TAB     &kp LGUI                                    &kp ENTER   &kp LEFT   &kp DOWN  &kp RIGHT  &none    &kp LG(D)   
                         &none   &kp LC(Z)  &kp LC(X)  &kp LC(V)  &kp LC(C)   &kp GRAVE                                   &kp LS(F10) &kp HOME   &kp PG_UP &kp PG_DN  &kp END  &none   
-                                             &nav_letter  &lt NUMBERS NUMBERS    &F_media_bspc &mouse_space 
+                                        &none &nav_letter  &lt NUMBERS NUMBERS    &F_media_bspc &mouse_space &none
                         >;
                 };
 
