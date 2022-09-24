@@ -182,7 +182,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         flavor = "hold-preferred";
                         tapping-term-ms = <200>;
                         quick-tap-ms = <300>;                        
-                        bindings = <&mo>, <&to>;
+                        bindings = <&mo>, <&sl>;
                 };
 
                 mo_to_layer: mo_to_layer {
@@ -191,7 +191,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         #binding-cells = <2>;
                         flavor = "hold-preferred";
                         tapping-term-ms = <200>;
-                        bindings = <&mo>, <&sl>;
+                        bindings = <&mo>, <&to>;
                 };
 
                 /*
@@ -205,7 +205,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                 };
                 */
 
-                //Press Go to Letters | Hold Momentary Navigation | Tap-Dance Go to Navigation | Tap-Dance Mouse --> two taps goes to Letters, three taps goes to Navigation
+                //Press Go to Letters | Hold Momentary Navigation | Tap-Dance Go to Navigation | Tap-Dance Mouse --> two taps go to Letters, three taps go to Navigation
                 nav_letter: nav_letter {
                         compatible = "zmk,behavior-tap-dance";
                         label = "NAV_LETTER";
@@ -378,7 +378,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         &none   &kp ESC    &caps_word &kp LC(A)  &kp LC(Y)   &kp LC(Z)                 &kp INS     &kp F2     &kp UP    &kp DEL    &none    &none   
                         &none   &kp LCTRL  &kp LALT   &kp LSHIFT &kp TAB     &kp LGUI                  &kp ENTER   &kp LEFT   &kp DOWN  &kp RIGHT  &none    &kp LG(D)   
                         &none   &kp LC(Z)  &kp LC(X)  &kp LC(V)  &kp LC(C)   &kp GRAVE                 &kp LS(F10) &kp HOME   &kp PG_UP &kp PG_DN  &kp END  &none   
-                                                                  &none &nav_letter  &mo_to_layer NUMBERS NUMBERS    &F_media_bspc &mouse_space &none
+                                                                  &none &to LETTERS  &mo_to_layer NUMBERS NUMBERS    &F_media_bspc &mouse_space &none
                         >;
                 };
 
