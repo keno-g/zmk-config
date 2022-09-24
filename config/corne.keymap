@@ -21,9 +21,6 @@
 #define NAVIGATION  5
 
 &lt {  // layer tap config
-    flavor = "balanced";
-    tapping-term-ms = <300>;
-    quick-tap-ms = <290>;      // double-tap + hold repeats tap-key
 };
 
 /*
@@ -182,9 +179,8 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         compatible = "zmk,behavior-hold-tap";
                         label = "&NAV_MO";
                         #binding-cells = <2>;
-                        flavor = "balanced";
-                        tapping-term-ms = <300>;
-                        quick-tap-ms = <290>;
+                        flavor = "hold-preferred";
+                        tapping-term-ms = <200>;
                         bindings = <&mo>, <&to>;
                 };
 
@@ -192,9 +188,8 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         compatible = "zmk,behavior-hold-tap";
                         label = "&MO_TO_LAYER";
                         #binding-cells = <2>;
-                        flavor = "balanced";
-                        tapping-term-ms = <300>;
-                        quick-tap-ms = <290>;
+                        flavor = "hold-preferred";
+                        tapping-term-ms = <200>;
                         bindings = <&mo>, <&to>;
                 };
 
@@ -203,9 +198,8 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         compatible = "zmk,behavior-hold-tap";
                         label = "&TO_NAV";
                         #binding-cells = <2>;
-                        flavor = "balanced";
-                        tapping-term-ms = <300>;
-                        quick-tap-ms = <290>;
+                        flavor = "hold-preferred";
+                        tapping-term-ms = <200>;
                         bindings = <&to>, <&to>;
                 };
                 */
@@ -228,13 +222,13 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         bindings = <&lt F_MEDIA BSPC>, <&kp BSPC>;
                 };
 
-                //Press Go to Space | Hold Momentary Mouse | Tap-Dance Mouse
+                //Press Go to Space | Hold Momentary Mouse | Tap-Dance Space | Tap-Dance Mouse --> two taps = space, three taps goes to mouse layer
                 mouse_space: mouse_space {
                         compatible = "zmk,behavior-tap-dance";
                         label = "MOUSE_SPACE";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&lt MOUSE SPACE>, <&to MOUSE>;
+                        bindings = <&lt MOUSE SPACE>, <&kp SPACE>, <&to MOUSE>;
                 };
 
                 /*
