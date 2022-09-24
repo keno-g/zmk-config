@@ -191,7 +191,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         #binding-cells = <2>;
                         flavor = "hold-preferred";
                         tapping-term-ms = <200>;
-                        bindings = <&mo>, <&ssl>;
+                        bindings = <&mo>, <&sl>;
                 };
 
                 /*
