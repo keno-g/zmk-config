@@ -23,6 +23,11 @@
 &lt {  // layer tap config
 };
 
+&sl {    // sticky layer config
+    quick-release;
+    /delete-property/ ignore-modifiers;
+};
+
 /*
 //Enough time for me to use sticky modifiers
 &sk {
@@ -210,7 +215,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         compatible = "zmk,behavior-tap-dance";
                         label = "NAV_LETTER";
                         #binding-cells = <0>;
-                        tapping-term-ms = <100>;
+                        tapping-term-ms = <300>;
                         bindings = <&nav_mo NAVIGATION NAVIGATION>, <&to LETTERS>, <&to NAVIGATION>;
                 };
 
