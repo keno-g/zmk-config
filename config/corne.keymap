@@ -210,6 +210,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         label = "NAV_LETTER";
                         #binding-cells = <0>;
                         tapping-term-ms = <100>;
+                        quick-tap-ms = <300>;
                         bindings = <&nav_mo NAVIGATION LETTERS>, <&to NAVIGATION>;
                 };
 
