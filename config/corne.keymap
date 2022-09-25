@@ -23,11 +23,6 @@
 &lt {  // layer tap config
 };
 
-&sl {    // sticky layer config
-    quick-release;
-    /delete-property/ ignore-modifiers;
-};
-
 /*
 //Enough time for me to use sticky modifiers
 &sk {
@@ -187,7 +182,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         flavor = "hold-preferred";
                         tapping-term-ms = <200>;
                         quick-tap-ms = <300>;                        
-                        bindings = <&mo>, <&sl>;
+                        bindings = <&mo>, <&to>;
                 };
 
                 mo_to_layer: mo_to_layer {
@@ -210,13 +205,13 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                 };
                 */
 
-                //Press Go to Letters | Hold Momentary Navigation | Tap-Dance Go to Navigation | Tap-Dance Mouse --> two taps go to Letters, three taps go to Navigation
+                //Press Go to Letters | Hold Momentary Navigation | Tap-Dance Go to Navigation
                 nav_letter: nav_letter {
                         compatible = "zmk,behavior-tap-dance";
                         label = "NAV_LETTER";
                         #binding-cells = <0>;
-                        tapping-term-ms = <300>;
-                        bindings = <&nav_mo NAVIGATION NAVIGATION>, <&to LETTERS>, <&to NAVIGATION>;
+                        tapping-term-ms = <100>;
+                        bindings = <&nav_mo NAVIGATION LETTERS>, <&to NAVIGATION>;
                 };
 
                 //Press Go to Backspace | Hold Momentary F_Media | Tap-Dance Backspace
