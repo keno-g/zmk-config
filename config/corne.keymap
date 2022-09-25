@@ -206,22 +206,22 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                 };
                 */
 
-                //Press Go to Letters | Hold Momentary Numbers | Tap-Dance Go to Numbers | Tap-Dance Go to Navigation --> two taps = go to Numbers, three taps goes to Navigation layer
+                //Press Go to Letters | Hold Momentary Numbers | Tap-Dance Go to Numbers 
                 num_letter: num_letter {
                         compatible = "zmk,behavior-tap-dance";
                         label = "NUM_LETTER";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&mo_to_layer NUMBERS LETTERS>, <&to NUMBERS>, <&to NAVIGATION>;  
+                        bindings = <&mo_to_layer NUMBERS LETTERS>, <&to NUMBERS>;  
                 };
 
-                //Press Go to Backspace | Hold Momentary F_Media | Tap-Dance Backspace
+                //Press Go to Backspace | Hold Momentary F_Media | Tap-Dance Backspace | Tap-Dance Go to Navigation --> two taps repeat backspace, three taps goes to Navigation layer
                 F_media_bspc: F_media_bspc {
                         compatible = "zmk,behavior-tap-dance";
                         label = "F_MEDIA_BSPC";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&lt F_MEDIA BSPC>, <&kp BSPC>;
+                        bindings = <&lt F_MEDIA BSPC>, <&kp BSPC>, <&to NAVIGATION>;
                 };
 
                 //Press Go to Space | Hold Momentary Mouse | Tap-Dance Space | Tap-Dance Mouse --> two taps = space, three taps goes to mouse layer
@@ -370,13 +370,13 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                 navigation {
 //              /* NAVIGATION
 //              _______________________________________________________________________________________________________
-//              |    |Esc   |CapsWords|Ctrl-A| Ctrl-Y |  Ctrl-Z  |             |Insert  |F2  |  Up  |Delete  |     |    |
-//              |    |Ctrl  | Alt     |Shift |  Tab   |   Win    |             |Enter   |Left| Down |Right   |     |    |
-//              |    |Ctrl-Z|Ctrl-X   |Ctrl-V| Ctrl-C |    `     |             |DropDown|Home|PageUp|PageDown| End |    |
+//              |    |Esc   |F2    |Ctrl-A| Ctrl-Y |  Ctrl-Z  |             |Insert  |CapsWords|  Up  |Delete  |     |    |
+//              |    |Ctrl  |Alt   |Shift |  Tab   |   Win    |             |Enter   |Left     | Down |Right   |     |    |
+//              |    |Ctrl-Z|Ctrl-X|Ctrl-V| Ctrl-C |    `     |             |DropDown|Home     |PageUp|PageDown| End |    |
 //                                                       |Nav|Letter/Num| |Bspc/F_Media|Space/Mouse| 
 
                         bindings = <
-                        &none   &kp ESC    &caps_word &kp LC(A)  &kp LC(Y)   &kp LC(Z)                 &kp INS     &kp F2     &kp UP    &kp DEL    &none    &none   
+                        &none   &kp ESC    &caps_word &kp F2     &kp LC(Y)   &kp LC(Z)                 &kp INS     &kp LC(A)sf  &kp UP    &kp DEL    &none    &none   
                         &none   &kp LCTRL  &kp LALT   &kp LSHIFT &kp TAB     &kp LGUI                  &kp ENTER   &kp LEFT   &kp DOWN  &kp RIGHT  &none    &kp LG(D)   
                         &none   &kp LC(Z)  &kp LC(X)  &kp LC(V)  &kp LC(C)   &kp GRAVE                 &kp LS(F10) &kp HOME   &kp PG_UP &kp PG_DN  &kp END  &none   
                                                                   &none &nav_mo NAVIGATION NAVIGATION  &num_letter    &F_media_bspc &mouse_space &none
