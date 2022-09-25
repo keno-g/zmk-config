@@ -220,7 +220,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         compatible = "zmk,behavior-tap-dance";
                         label = "F_MEDIA_BSPC";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <150>;
                         bindings = <&lt F_MEDIA BSPC>, <&kp BSPC>, <&to NAVIGATION>;
                 };
 
