@@ -376,7 +376,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 //                                                       |Nav|Letter/Num| |Bspc/F_Media|Space/Mouse| 
 
                         bindings = <
-                        &none   &kp ESC    &caps_word &kp F2     &kp LC(Y)   &kp LC(Z)                 &kp INS     &kp LC(A)sf  &kp UP    &kp DEL    &none    &none   
+                        &none   &kp ESC    &kp F2     &kp LC(Y)   &kp LC(Z)                            &kp INS     &caps_word &kp UP    &kp DEL    &none    &none   
                         &none   &kp LCTRL  &kp LALT   &kp LSHIFT &kp TAB     &kp LGUI                  &kp ENTER   &kp LEFT   &kp DOWN  &kp RIGHT  &none    &kp LG(D)   
                         &none   &kp LC(Z)  &kp LC(X)  &kp LC(V)  &kp LC(C)   &kp GRAVE                 &kp LS(F10) &kp HOME   &kp PG_UP &kp PG_DN  &kp END  &none   
                                                                   &none &nav_mo NAVIGATION NAVIGATION  &num_letter    &F_media_bspc &mouse_space &none
