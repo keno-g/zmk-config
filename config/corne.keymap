@@ -162,7 +162,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         compatible = "zmk,behavior-mod-morph";
                         label = "&DOT_RPAR";
                         #binding-cells = <0>;
-                        bindings = <&kp KP_DOT>, <&kp RPAR>;
+                        bindings = <&kp PERIOD>, <&kp RPAR>;
                         mods = <(MOD_LSFT)>;
                 };
                
@@ -220,7 +220,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         compatible = "zmk,behavior-tap-dance";
                         label = "F_MEDIA_BSPC";
                         #binding-cells = <0>;
-                        tapping-term-ms = <150>;
+                        tapping-term-ms = <50>;
                         bindings = <&lt F_MEDIA BSPC>, <&kp BSPC>, <&to NAVIGATION>;
                 };
 
@@ -324,7 +324,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 //                                              |Nav|Letter/Num| |Bspc/F_Media|Space/Mouse| 
 
                         bindings = <
-                        &none   &kp ESC    &none    &none      &mkp LCLK   &none               &none   &none                 &mmv MOVE_VERT(-1000)   &none                  &none                &none   
+                        &none   &kp ESC    &none    &none      &mkp LCLK   &none               &none   &none                 &mmv MOVE_VERT(-1000)   &none                  &to NAVIGATION     &none   
                         &none   &kp LCTRL  &kp LALT &kp LSHIFT &kp TAB     &kp LGUI            &none   &mmv MOVE_HOR(-1000)  &mmv MOVE_VERT(1000)  &mmv MOVE_HOR(1000)    &mkp RCLK            &kp LG(D)   
                         &none   &none      &none    &none      &none       &none               &none   &mwh SCROLL_HOR(-15)  &mwh SCROLL_VERT(15)   &mwh SCROLL_VERT(-15)  &mwh SCROLL_HOR(15)  &none   
                                                         &none &nav_mo NAVIGATION NAVIGATION  &num_letter    &F_media_bspc &mouse_space &none
