@@ -26,7 +26,7 @@
 &sk {
      quick-release;
 //Enough time for me to use sticky modifiers
-     release-after-ms = <3000>;
+//     release-after-ms = <2000>;
 };
 
 
@@ -60,7 +60,14 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                                 timeout-ms = <20>;
                                 key-positions = <2 3>;
                                 layers = <LETTERS NUMBERS>;
-                                bindings = <&t_combo_shift>;                      
+                                bindings = <&sk LSHFT>;                      
+                        };
+
+                        combo_caps_word {
+                                timeout-ms = <20>;
+                                key-positions = <2 3 4>;
+                                layers = <LETTERS NUMBERS>;
+                                bindings = <&caps_word>;                      
                         };
 
                         // workaround as default &kp C_AL_LOCK function does not work in Windows
@@ -243,6 +250,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         bindings = <&lt MOUSE SPACE>, <&kp SPACE>, <&to MOUSE>;
                 };
 
+                /*                
                 //Press Go to Space | Hold Momentary Mouse | Tap-Dance Space | Tap-Dance Mouse --> two taps = space, three taps goes to mouse layer
                 t_combo_shift: t_combo_shift {
                         compatible = "zmk,behavior-tap-dance";
@@ -252,7 +260,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         bindings = <&sk LSHFT>, <&caps_word>;
                 };
 
-                /*
+                
                 //Tap-Dance to input # and £ 
                 hash_sterling: hash_sterling {
                         compatible = "zmk,behavior-tap-dance";
