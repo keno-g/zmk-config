@@ -72,7 +72,6 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         combo_caps_word {
                                 timeout-ms = <20>;
                                 key-positions = <2 3 4>;
-                                layers = <LETTERS NUMBERS>;
                                 bindings = <&caps_word>;                      
                         };
 
@@ -299,7 +298,8 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 //                 LETTERS
 //                _________________________________________________________________________________________
 //              |    |  w  |  l  |  r  |  b   |  z      |             | ;: |  q  |  u  |  d  |  j  |    |
-//              |    |     |   Shift   |      |         |             |    |     |  Lock Computer  |    |
+//              |    |     |   Shift   |      |         |             |    |     |   Enter   |     |    |
+//              |    |     |   Caps Words     |         |             |    |     |  Lock Computer  |    |
 //
 //              |    |  s  |  h  |  n  |  t   |  ,(     |             | .) |  a  |  e  |  o  |  i  |    |
 //              |    |  f  |  m  |  v  |  c   |  /?     |             | g  |  p  |  x  |  k  |  y  |    |
@@ -403,15 +403,15 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                 navigation {
 //              /* NAVIGATION
 //              _______________________________________________________________________________________________________
-//              |    |Esc   |F2    |Ctrl-A| Ctrl-Y |  Ctrl-Z  |             |Insert  |CapsWords|  Up  |Delete  |LETTERS|    |
-//              |    |Ctrl  |Alt   |Shift |  Tab   |   Win    |             |Enter   |Left     | Down |Right   |       |    |
-//              |    |Ctrl-Z|Ctrl-X|Ctrl-V| Ctrl-C |    `     |             |DropDown|Home     |PageUp|PageDown| End   |    |
+//              |    |Esc   |F2    |Ctrl-A| Ctrl-Y |  Ctrl-Z  |             |Insert  |Home     |  Up  |End     |Delete |    |
+//              |    |Ctrl  |Alt   |Shift |  Tab   |   Win    |             |        |Left     | Down |Right   |       |    |
+//              |    |Ctrl-Z|Ctrl-X|Ctrl-V| Ctrl-C |    `     |             |DropDown|         |PageUp|PageDown|       |    |
 //                                                       |Nav|Nav/Num| |Bspc/F_Media|Space/Mouse| 
 
                         bindings = <
-                        &none   &kp ESC    &kp F2     &kp LC(A)  &kp LC(Y)   &kp LC(Z)                 &kp INS     &caps_word &kp UP    &kp DEL    &to LETTERS    &none   
-                        &none   &kp LCTRL  &kp LALT   &kp LSHIFT &kp TAB     &kp LGUI                  &none   &kp LEFT   &kp DOWN  &kp RIGHT  &none    &kp LG(D)   
-                        &none   &kp LC(Z)  &kp LC(X)  &kp LC(V)  &kp LC(C)   &kp GRAVE                 &kp LS(F10) &kp HOME   &kp PG_UP &kp PG_DN  &kp END  &none   
+                        &none   &kp ESC    &kp F2     &kp LC(A)  &kp LC(Y)   &kp LC(Z)                 &kp INS &kp HOME   &kp UP    &kp END    &kp DEL    &none  
+                        &none   &kp LCTRL  &kp LALT   &kp LSHIFT &kp TAB     &kp LGUI                  &none   &kp LEFT   &kp DOWN  &kp RIGHT  &none      &kp LG(D)   
+                        &none   &kp LC(Z)  &kp LC(X)  &kp LC(V)  &kp LC(C)   &kp GRAVE                 &kp LS(F10) &none  &kp PG_UP &kp PG_DN  &none      &none   
                                                   &none &nav_mo NAVIGATION NAVIGATION  &num_nav    &F_media_bspc &mouse_space &none
                         >;
                 };
