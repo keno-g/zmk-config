@@ -37,8 +37,8 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 
 // Mouse movement and mouse wheel speed and acceleration settings
 &mmv {    
-        time-to-max-speed-ms = <500>;
-        acceleration-exponent=<2>;
+        time-to-max-speed-ms = <250>;
+        acceleration-exponent=<1>;
 };
 &mwh {    
         time-to-max-speed-ms = <0>;
@@ -61,6 +61,12 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                                 key-positions = <2 3>;
                                 layers = <LETTERS NUMBERS>;
                                 bindings = <&sk LSHFT>;                      
+                        };
+
+                        combo_enter {
+                                timeout-ms = <20>;
+                                key-positions = <7 8>;
+                                bindings = <&kp ENTER>;                      
                         };
 
                         combo_caps_word {
@@ -404,7 +410,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 
                         bindings = <
                         &none   &kp ESC    &kp F2     &kp LC(A)  &kp LC(Y)   &kp LC(Z)                 &kp INS     &caps_word &kp UP    &kp DEL    &to LETTERS    &none   
-                        &none   &kp LCTRL  &kp LALT   &kp LSHIFT &kp TAB     &kp LGUI                  &kp ENTER   &kp LEFT   &kp DOWN  &kp RIGHT  &none    &kp LG(D)   
+                        &none   &kp LCTRL  &kp LALT   &kp LSHIFT &kp TAB     &kp LGUI                  &none   &kp LEFT   &kp DOWN  &kp RIGHT  &none    &kp LG(D)   
                         &none   &kp LC(Z)  &kp LC(X)  &kp LC(V)  &kp LC(C)   &kp GRAVE                 &kp LS(F10) &kp HOME   &kp PG_UP &kp PG_DN  &kp END  &none   
                                                   &none &nav_mo NAVIGATION NAVIGATION  &num_nav    &F_media_bspc &mouse_space &none
                         >;
