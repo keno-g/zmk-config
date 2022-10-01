@@ -67,7 +67,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 
                         combo_enter {
                                 timeout-ms = <20>;
-                                key-positions = <7 8>;
+                                key-positions = <8 9>;
                                 bindings = <&kp ENTER>;                      
                         };
 
@@ -377,7 +377,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 
                                         bindings = <
                 &none   &kp W         &kp L        &kp R         &kp B        &kp Z                      &kp SEMICOLON       &kp Q        &kp U         &kp D        &kp J  &none
-                &none   &hml LCTL S  &hml LALT H  &hml LSHIFT N  &hml LGUI T  &comma_lpar        &dot_rpar   &hmr LGUI A  &hmr LSHIFT E  &hmr LALT O  &hmr LCTL I  &kp LG(D)
+                &none   &hml LCTL S  &hml LALT H  &hml LSHIFT N  &hml LGUI T  &hml TAB comma_lpar        &hmr TAB dot_rpar   &hmr LGUI A  &hmr LSHIFT E  &hmr LALT O  &hmr LCTL I  &kp LG(D)
                 &none   &kp F         &kp M        &kp V         &kp C        &kp SLASH                  &kp G               &kp P        &kp X         &kp K        &kp Y  &none   
                                                                             &none &nav_tab  &F_media_nav    &num_bspc &mouse_space &none
                         >;
@@ -480,7 +480,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 
                         bindings = <
                         &none   &kp ESC    &kp F2     &kp LC(A)  &kp LC(Y)   &kp LC(Z)                 &kp INS &kp HOME   &kp UP    &kp END    &kp DEL    &none  
-                        &none   &kp LCTRL  &kp LALT   &kp LSHIFT &kp TAB     &kp LGUI                  &none   &kp LEFT   &kp DOWN  &kp RIGHT  &none      &kp LG(D)   
+                        &none   &kp LCTRL  &kp LALT   &kp LSHIFT &kp TAB     &kp LGUI                  &kp ENTER   &kp LEFT   &kp DOWN  &kp RIGHT  &none      &kp LG(D)   
                         &none   &kp LC(Z)  &kp LC(X)  &kp LC(V)  &kp LC(C)   &kp GRAVE                 &kp LS(F10) &none  &kp PG_UP &kp PG_DN  &none      &none   
                                                                        &none &nav_tab  &F_media_nav    &num_bspc &mouse_space &none
                         >;
