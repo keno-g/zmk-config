@@ -195,8 +195,8 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         compatible = "zmk,behavior-mod-morph";
                         label = "&NAV_TAB";
                         #binding-cells = <0>;
-                        bindings = <&kp PERCENT>, <&kp TAB>;
-                        mods = <(MOD_LSFT)>;
+                        bindings = <&nav_mo NAVIGATION NAVIGATION>, <&kp TAB>;
+                        mods = <(MOD_LCTL|MOD_LALT|MOD_LSFT|MOD_LGUI)>;
                 };
 
         //Hold_Tap
@@ -351,7 +351,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         quick-tap-ms = <175>;                // double tapping same key allows for repeating
                         global-quick-tap-ms = <150>;         // without PR #1387 use global-quick-tap instead
                         bindings = <&kp>, <&kp>;
-                        hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 s36 37 38 39 40 41>;
+                        hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41>;
                         hold-trigger-on-release;             // requires PR #1423
                 };
 
