@@ -196,7 +196,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         label = "&NAV_TAB";
                         #binding-cells = <0>;
                         bindings = <&kp PERCENT>, <&kp TAB>;
-                        mods = <(MOD_LCTRL|MOD_LALT|MOD_LSFT|MOD_LGUI)>;
+                        mods = <(MOD_LSFT)>;
                 };
 
         //Hold_Tap
