@@ -202,33 +202,6 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                 */
 
         //Hold_Tap
-                mo_to: mo_to {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "&MO_TO";
-                        #binding-cells = <2>;
-                        flavor = "hold-preferred";
-                        tapping-term-ms = <20>;
-                        // quick-tap-ms = <300>;                        
-                        bindings = <&mo>, <&to>;
-                };
-                lok1: layer_or_keypress1 {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "&LAYER_OR_KEYPRESS";
-                        #binding-cells = <2>;
-                        flavor = "hold-preferred";
-                        tapping-term-ms = <20>;
-                        bindings = <&mo>, <&kp>;
-                };
-
-                lok2: layer_or_keypress2 {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "&LAYER_OR_KEYPRESS";
-                        #binding-cells = <2>;
-                        flavor = "hold-preferred";
-                        tapping-term-ms = <100>;
-                        bindings = <&mo>, <&kp>;
-                };
-
 
                 /*
                 mo_to_layer: mo_to_layer {
@@ -263,6 +236,33 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                 };
                 */
 
+                mo_to: mo_to {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "&MO_TO";
+                        #binding-cells = <2>;
+                        flavor = "hold-preferred";
+                        tapping-term-ms = <20>;
+                        // quick-tap-ms = <300>;                        
+                        bindings = <&mo>, <&to>;
+                };
+                lok1: layer_or_keypress1 {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "&LAYER_OR_KEYPRESS";
+                        #binding-cells = <2>;
+                        flavor = "hold-preferred";
+                        tapping-term-ms = <20>;
+                        bindings = <&mo>, <&kp>;
+                };
+
+                lok2: layer_or_keypress2 {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "&LAYER_OR_KEYPRESS";
+                        #binding-cells = <2>;
+                        flavor = "hold-preferred";
+                        tapping-term-ms = <100>;
+                        bindings = <&mo>, <&kp>;
+                };
+
         //Tap-Dance
                 //Press Go to Letter | Hold Momentary Navigation | (Tap-Dance currently inactive)
                 nav_letter: nav_letter {
@@ -287,8 +287,8 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         compatible = "zmk,behavior-tap-dance";
                         label = "NUM_BSPC";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
-                        bindings = <&lok1 NUMBERS BSPC>, <&kp BSPC>, <&kp NUMBERS>; 
+                        tapping-term-ms = <50>;
+                        bindings = <&lok1 NUMBERS BSPC>, <&kp BSPC>, <&to NUMBERS>; 
                 };
 
                 //Press Go to Space | Hold Momentary Mouse | Tap-Dance Space | Tap-Dance Mouse --> two taps = space, three taps goes to mouse layer
