@@ -261,7 +261,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                     };
 
                 //Press Go to Backspace | Hold Momentary Numbers | Tap-Dance Backspace | Tap-Dance Numbers --> two taps = backspace, three taps goes to numbers layer
-                num_bspc1: num_bspc {
+                num_bspc1: num_bspc1 {
                         compatible = "zmk,behavior-hold-tap";
                         label = "&NUM_BSPC1";
                         #binding-cells = <2>;
