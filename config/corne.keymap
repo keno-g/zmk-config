@@ -108,34 +108,6 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 
         macros {
         
-                nav_letter: nav_letter {
-                        label = "&NAV_LETTER";
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        wait-ms = <20>;
-                        tap-ms = <20>;
-                        bindings = <&mo_to NAVIGATION LETTERS>;
-                };
-
-                F_media_nav: F_media_nav {
-                        label = "F_MEDIA_NAV";
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        wait-ms = <20>;
-                        tap-ms = <20>;
-                        bindings = <&mo_to F_MEDIA NAVIGATION>;  
-                };
-
-                num_bspc: num_bspc {
-                        label = "&NUM_BSPC";
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        wait-ms = <20>;
-                        tap-ms = <20>;
-                        bindings = <&num_bspc1 NUMBERS tap_num_bspc>;  
-                };
-
-
         /*
                 //Macro to type £
                 sterling: sterling {
@@ -274,6 +246,20 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         bindings = <&mo>, <&to>;
                 };
 
+                    nav_letter: nav_letter {
+                            label = "&NAV_LETTER";
+                            #binding-cells = <0>;
+                            tapping-term-ms = <20>;
+                            bindings = <&mo_to NAVIGATION LETTERS>;
+                    };
+
+                    F_media_nav: F_media_nav {
+                            label = "F_MEDIA_NAV";
+                            #binding-cells = <0>;
+                            tapping-term-ms = <20>;
+                            bindings = <&mo_to F_MEDIA NAVIGATION>;  
+                    };
+
                 //Press Go to Backspace | Hold Momentary Numbers | Tap-Dance Backspace | Tap-Dance Numbers --> two taps = backspace, three taps goes to numbers layer
                 num_bspc1: num_bspc1 {
                         compatible = "zmk,behavior-hold-tap";
@@ -284,6 +270,13 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         quick-tap-ms = <300>;                        
                         bindings = <&mo>, <&kp>;
                 };
+
+                    num_bspc: num_bspc {
+                            label = "&NUM_BSPC";
+                            #binding-cells = <0>;
+                            tapping-term-ms = <20>;
+                            bindings = <&num_bspc1 NUMBERS (tap_num_bspc)>;  
+                    };
 
                 /*
                 lok1: layer_or_keypress1 {
@@ -331,7 +324,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_NUM_BSPC";
                         #binding-cells = <0>;
-                        tapping-term-ms = <100>;
+                        tapping-term-ms = <200>;
                         bindings = <&kp BSPC>, <&kp BSPC>, <&to NUMBERS>; 
                 };
 
