@@ -287,7 +287,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         compatible = "zmk,behavior-tap-dance";
                         label = "NUM_BSPC";
                         #binding-cells = <0>;
-                        tapping-term-ms = <50>;
+                        tapping-term-ms = <100>;
                         bindings = <&lok1 NUMBERS BSPC>, <&kp BSPC>, <&to NUMBERS>; 
                 };
 
