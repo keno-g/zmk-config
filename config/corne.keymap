@@ -300,6 +300,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         bindings = <&lok2 MOUSE SPACE>, <&kp SPACE>, <&to MOUSE>;
                 };
 
+                /*
                 //Tap-Dance to input # and £ 
                 hash_sterling: hash_sterling {
                         compatible = "zmk,behavior-tap-dance";
@@ -317,6 +318,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         tapping-term-ms = <200>;
                         bindings = <&kp DOLLAR>, <&euro>;
                 };
+                */
                 
 
 // Key Positions Index for Combos
