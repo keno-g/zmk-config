@@ -1,5 +1,5 @@
 # Keno's zmk-config
-Work in progress. Split keyboard layout. Key goal is to minimise finger travel, unnatural locked positions for finger combinations and time spent holding down modifier keys.
+Work in progress. Split keyboard layout for Corne Swept. Key goal is to minimise finger travel, unnatural locked positions for finger combinations and time spent holding down modifier keys.
 This has been heavily influenced the great repositories of several others that I'll reference here in later versions.
 
 This layout makes use of the native sticky keys in Windows, rather than the sticky keys from ZMK.
