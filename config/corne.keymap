@@ -98,6 +98,18 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                                 bindings = <&bootloader>;                      
                         };
 
+                        combo_letters_layer {
+                                timeout-ms = <20>;
+                                key-positions = <25 26>;
+                                bindings = <&to LETTERS>;                      
+                        };
+
+                        combo_navigation_layer {
+                                timeout-ms = <20>;
+                                key-positions = <27 28>;
+                                bindings = <&to NAVIGATION>;                      
+                        };
+
                         combo_bluetooth_layer {
                                 timeout-ms = <20>;
                                 key-positions = <30 31 32>;
@@ -289,7 +301,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         label = "LAYER_OR_KEYPRESS1";
                         #binding-cells = <2>;
                         flavor = "hold-preferred";
-                        tapping-term-ms = <50>;
+                        tapping-term-ms = <100>;
                         bindings = <&mo>, <&kp>;
                 };
                 
@@ -329,7 +341,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         compatible = "zmk,behavior-tap-dance";
                         label = "NUM_BSPC";
                         #binding-cells = <0>;
-                        tapping-term-ms = <50>;
+                        tapping-term-ms = <100>;
                         bindings = <&lok1 NUMBERS BSPC>, <&kp BSPC>, <&to NUMBERS>; 
                 };
 
@@ -416,6 +428,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 //HR Mods       |    |Ctrl | Alt |Shift|  Win |Tab   |             |Tab |Win  |Shift|Alt  |Ctrl |    |
 
 //              |    |  f  |  m  |  v  |  c   |  /?  |             | g  |  p  |  x  |  k  |  y  |    |
+//Combo         |    |  Letters  |  Numbers   |      |             |    |     |     |     |     |    |
 //                                              |Nav|Nav/Num| |Bspc/F_Media|Space/Mouse| 
 
                                         bindings = <
