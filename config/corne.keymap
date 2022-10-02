@@ -245,6 +245,32 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         // quick-tap-ms = <300>;                        
                         bindings = <&mo>, <&to>;
                 };
+
+                    nav_letter: nav_letter {
+                            label = "&NAV_LETTER";
+                            #binding-cells = <0>;
+                            tapping-term-ms = <20>;
+                            bindings = <&mo_to NAVIGATION LETTERS>;
+                    };
+
+                    F_media_nav: F_media_nav {
+                            label = "F_MEDIA_NAV";
+                            #binding-cells = <0>;
+                            tapping-term-ms = <20>;
+                            bindings = <&mo_to F_MEDIA NAVIGATION>;  
+                    };
+
+                //Press Go to Backspace | Hold Momentary Numbers | Tap-Dance Backspace | Tap-Dance Numbers --> two taps = backspace, three taps goes to numbers layer
+                num_bspc: num_bspc {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "&NUM_BSPC";
+                        #binding-cells = <2>;
+                        flavor = "hold-preferred";
+                        tapping-term-ms = <20>;
+                        quick-tap-ms = <300>;                        
+                        bindings = <&mo NUMBERS>, <&tap_num_bspc>;
+                };
+
                 lok1: layer_or_keypress1 {
                         compatible = "zmk,behavior-hold-tap";
                         label = "&LAYER_OR_KEYPRESS";
@@ -264,31 +290,33 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                 };
 
         //Tap-Dance
+                /*
                 //Press Go to Letter | Hold Momentary Navigation | (Tap-Dance currently inactive)
-                nav_letter: nav_letter {
+                tap_nav_letter: tap_nav_letter {
                         compatible = "zmk,behavior-tap-dance";
-                        label = "&NAV_LETTER";
+                        label = "&TAP_NAV_LETTER";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
                         bindings = <&mo_to NAVIGATION LETTERS>;
                 };
 
                 //Press Go to Navigation | Hold Momentary F_Media | (Tap-Dance currently inactive)
-                F_media_nav: F_media_nav {
+                tap_F_media_nav: tap_F_media_nav {
                         compatible = "zmk,behavior-tap-dance";
-                        label = "F_MEDIA_NAV";
+                        label = "TAP_F_MEDIA_NAV";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
                         bindings = <&mo_to F_MEDIA NAVIGATION>;  
                 };
+                */
 
-                //Press Go to Backspace | Hold Momentary Numbers | Tap-Dance Backspace | Tap-Dance Numbers --> two taps = backspace, three taps goes to numbers layer
-                num_bspc: num_bspc {
+                //Press Go to Backspace | Tap-Dance Backspace | Tap-Dance Numbers --> two taps = backspace, three taps goes to numbers layer
+                tap_num_bspc: tap_num_bspc {
                         compatible = "zmk,behavior-tap-dance";
-                        label = "NUM_BSPC";
+                        label = "TAP_NUM_BSPC";
                         #binding-cells = <0>;
                         tapping-term-ms = <100>;
-                        bindings = <&lok1 NUMBERS BSPC>, <&kp BSPC>, <&to NUMBERS>; 
+                        bindings = <&kp BSPC>, <&kp BSPC>, <&to NUMBERS>; 
                 };
 
                 //Press Go to Space | Hold Momentary Mouse | Tap-Dance Space | Tap-Dance Mouse --> two taps = space, three taps goes to mouse layer
@@ -296,7 +324,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         compatible = "zmk,behavior-tap-dance";
                         label = "MOUSE_SPACE";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <200>
                         bindings = <&lok2 MOUSE SPACE>, <&kp SPACE>, <&to MOUSE>;
                 };
 
