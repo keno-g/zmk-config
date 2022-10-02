@@ -275,7 +275,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                             label = "&NUM_BSPC";
                             #binding-cells = <0>;
                             tapping-term-ms = <20>;
-                            bindings = <&num_bspc1 NUMBERS tap_num_bspc>;  
+                            bindings = <&num_bspc1 NUMBERS &tap_num_bspc>;  
                     };
 
                 /*
