@@ -400,7 +400,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         flavor = "hold-preferred";
                         tapping-term-ms = <150>;
                         quick-tap-ms = <300>;                        
-                        bindings = <&kp>, <&to>;
+                        bindings = <0>, <&to>;
                 };
   
                 /*
