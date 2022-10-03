@@ -13,12 +13,11 @@
 //&out OUT_BLE //prioritises bluetooth over USB
 
 #define LETTERS     0
-//#define L_MAIN      1 // Layer + (to distribute to other layers) - at present, not used
-#define NUMBERS     1
-#define MOUSE       2
-#define F_MEDIA     3
-#define BLUETOOTH   4
-#define NAVIGATION  5
+#define NAVIGATION  1
+#define NUMBERS     2
+#define MOUSE       3
+#define F_MEDIA     4
+#define BLUETOOTH   5
 
 /*
 &lt {  // layer tap config
@@ -439,22 +438,21 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         >;
                 };
 
-/*                l_main {
-//                 Layer+ (to distribute to other layers) - at present, not used
-//              ____________________________________________________________________________________________________________
-//              |    |          |       |     |       |         |             |     |    |    |    |    Bluetooth      |    |
-//              |    |Navigation|Numbers|Mouse|F&Media|         |             |     |    |    |    |ToggleLetterLayouts|    |
-//              |    |          |       |     |       |         |             |     |    |    |    |                   |    |
-//                                         |Nav|Nav/Num| |Bspc/F_Media|Space/Mouse| 
+                navigation {
+//              /* NAVIGATION
+//              _______________________________________________________________________________________________________
+//              |    |Esc   |F2    |Ctrl-A| Ctrl-Y |  Ctrl-Z  |             |Insert  |Home     |  Up  |End     |Delete |    |
+//              |    |Ctrl  |Alt   |Shift |  Tab   |   Win    |             |Enter   |Left     | Down |Right   |       |    |
+//              |    |Ctrl-Z|Ctrl-X|Ctrl-V| Ctrl-C |    `     |             |DropDown|         |PageUp|PageDown|       |    |
+//                                                       |Nav|Nav/Num| |Bspc/F_Media|Space/Mouse| 
 
                         bindings = <
-                &none   &none           &none      &none        &none        &none                                       &none   &none   &none   &none   &to BLUETOOTH  &none   
-                &none   &to NAVIGATION  &to NUMBERS  &to MOUSE  &to F_MEDIA  &none                                       &none   &none   &none   &none   &none          &kp LG(D)   
-                &none   &none           &none      &none        &none        &none                                       &none   &none   &none   &none   &none          &none   
-                        &lt NUMBERS LETTERS  &mo_to NAVIGATION NAVIGATION NAVIGATION NAVIGATION  &lt NUMBERS LETTERS          &lt MOUSE BSPC  &lt F_MEDIA SPACE  &lt MOUSE BSPC  
+                        &none   &kp ESC    &kp F2     &kp LC(A)  &kp LC(Y)   &kp LC(Z)                 &kp INS &kp HOME   &kp UP    &kp END    &kp DEL    &none  
+                        &none   &kp LCTRL  &kp LALT   &kp LSHIFT &kp LGUI    &kp TAB                  &kp ENTER   &kp LEFT   &kp DOWN  &kp RIGHT  &none      &kp LG(D)   
+                        &none   &kp LC(Z)  &kp LC(X)  &kp LC(V)  &kp LC(C)   &kp GRAVE                 &kp LS(F10) &none  &kp PG_UP &kp PG_DN  &none      &none   
+                                                                       &none  &mo_to NAVIGATION LETTERS   &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
                         >;
                 };
-*/
 
                 numbers {
 //               NUMBERS     
@@ -523,22 +521,6 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         &none   &bt BT_SEL 4    &none         &none         &none         &none                   &none   &none   &none   &none   &none   &kp LG(D)
                         &none   &none           &none         &none         &none         &none                   &none   &none   &none   &none   &none   &none   
                                                                                &none  &mo_to NAVIGATION LETTERS   &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
-                        >;
-                };
-
-                navigation {
-//              /* NAVIGATION
-//              _______________________________________________________________________________________________________
-//              |    |Esc   |F2    |Ctrl-A| Ctrl-Y |  Ctrl-Z  |             |Insert  |Home     |  Up  |End     |Delete |    |
-//              |    |Ctrl  |Alt   |Shift |  Tab   |   Win    |             |Enter   |Left     | Down |Right   |       |    |
-//              |    |Ctrl-Z|Ctrl-X|Ctrl-V| Ctrl-C |    `     |             |DropDown|         |PageUp|PageDown|       |    |
-//                                                       |Nav|Nav/Num| |Bspc/F_Media|Space/Mouse| 
-
-                        bindings = <
-                        &none   &kp ESC    &kp F2     &kp LC(A)  &kp LC(Y)   &kp LC(Z)                 &kp INS &kp HOME   &kp UP    &kp END    &kp DEL    &none  
-                        &none   &kp LCTRL  &kp LALT   &kp LSHIFT &kp LGUI    &kp TAB                  &kp ENTER   &kp LEFT   &kp DOWN  &kp RIGHT  &none      &kp LG(D)   
-                        &none   &kp LC(Z)  &kp LC(X)  &kp LC(V)  &kp LC(C)   &kp GRAVE                 &kp LS(F10) &none  &kp PG_UP &kp PG_DN  &none      &none   
-                                                                       &none  &mo_to NAVIGATION LETTERS   &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
                         >;
                 };
 
