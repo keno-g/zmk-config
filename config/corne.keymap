@@ -14,11 +14,11 @@
 
 #define LETTERS     0
 //#define L_MAIN      1 // Layer + (to distribute to other layers) - at present, not used
-#define NUMBERS     1
-#define MOUSE       2
-#define F_MEDIA     3
-#define BLUETOOTH   4
-#define NAVIGATION  5
+#define NAVIGATION  1
+#define NUMBERS     2
+#define MOUSE       3
+#define F_MEDIA     4
+#define BLUETOOTH   5
 
 /*
 &lt {  // layer tap config
@@ -119,116 +119,9 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
         };
 
         macros {
-            //Macros to emulate &mo behaviour
-                //back to letters
-                mo_fmedia_lett: mo_fmedia_lett {
-                        label = "ZM_mo_fmedia_lett";
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        wait-ms = <0>;
-                        bindings
-                                = <&macro_press &to F_MEDIA>
-                                , <&macro_pause_for_release>
-                                , <&macro_release &to LETTERS>;
-                        };
-
-                
-                
-                //back to numbers
-                mo_nav_num: mo_nav_num {
-                        label = "ZM_mo_nav_num";
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        wait-ms = <0>;
-                        bindings
-                                = <&macro_press &to NAVIGATION>
-                                , <&macro_pause_for_release>
-                                , <&macro_release &to NUMBERS>;
-                        };
-
-                mo_fmedia_num: mo_fmedia_num {
-                        label = "ZM_mo_fmedia_num";
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        wait-ms = <0>;
-                        bindings
-                                = <&macro_press &to F_MEDIA>
-                                , <&macro_pause_for_release>
-                                , <&macro_release &to NUMBERS>;
-                        };
-
-                //back to mouse
-                mo_nav_mou: mo_nav_mou {
-                        label = "ZM_mo_nav_mou";
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        wait-ms = <0>;
-                        bindings
-                                = <&macro_press &to NAVIGATION>
-                                , <&macro_pause_for_release>
-                                , <&macro_release &to MOUSE>;
-                        };
-
-                mo_fmedia_mou: mo_fmedia_mou {
-                        label = "ZM_mo_fmedia_mou";
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        wait-ms = <0>;
-                        bindings
-                                = <&macro_press &to F_MEDIA>
-                                , <&macro_pause_for_release>
-                                , <&macro_release &to MOUSE>;
-                        };
-
-                //back to F_Media
-                mo_nav_fmedia: mo_nav_fmedia {
-                        label = "ZM_mo_nav_fmedia";
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        wait-ms = <0>;
-                        bindings
-                                = <&macro_press &to NAVIGATION>
-                                , <&macro_pause_for_release>
-                                , <&macro_release &to F_MEDIA>;
-                        };
-
-                mo_fmedia_fmedia: mo_fmedia_fmedia {
-                        label = "ZM_mo_fmedia_fmedia";
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        wait-ms = <0>;
-                        bindings
-                                = <&macro_press &to F_MEDIA>
-                                , <&macro_pause_for_release>
-                                , <&macro_release &to F_MEDIA>;
-                        };
-
-                //back to navigation
-                mo_nav_nav: mo_nav_nav {
-                        label = "ZM_mo_nav_nav";
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        wait-ms = <0>;
-                        bindings
-                                = <&macro_press &to NAVIGATION>
-                                , <&macro_pause_for_release>
-                                , <&macro_release &to NAVIGATION>;
-                        };
-
-                mo_fmedia_nav: mo_fmedia_nav {
-                        label = "ZM_mo_fmedia_nav";
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        wait-ms = <0>;
-                        bindings
-                                = <&macro_press &to F_MEDIA>
-                                , <&macro_pause_for_release>
-                                , <&macro_release &to NAVIGATION>;
-                        };
-
-
+        
         /*
-            //Macro to type £
+                //Macro to type £
                 sterling: sterling {
                 label = "ZM_STERLING";
                 compatible = "zmk,behavior-macro";
@@ -242,7 +135,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         ;
                 };
                 
-            //Macro to type €
+                //Macro to type €
                 euro: euro {
                 label = "ZM_EURO";
                 compatible = "zmk,behavior-macro";
@@ -354,7 +247,17 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         bindings = <&mo_to_layer NUMBERS LETTERS>, <&to NUMBERS>;  
                 };
                 */
-                
+
+                mo_to: mo_to {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "MO_TO";
+                        #binding-cells = <2>;
+                        flavor = "hold-preferred";
+                        tapping-term-ms = <150>;
+                        quick-tap-ms = <300>;                        
+                        bindings = <&mo>, <&to>;
+                };
+
                     /*
                     nav_letter: nav_letter {
                             label = "NAV_LETTER";
@@ -393,108 +296,6 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                     };
                 */
                 
-                mo_to: mo_to {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "mo_to";
-                        #binding-cells = <2>;
-                        flavor = "hold-preferred";
-                        tapping-term-ms = <150>;
-                        quick-tap-ms = <300>;                        
-                        bindings = <0>, <&to>;
-                };
-  
-                /*
-                mo_fmedia_lett_to: mo_fmedia_lett_to {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "mo_fmedia_lett_to";
-                        #binding-cells = <2>;
-                        flavor = "hold-preferred";
-                        tapping-term-ms = <150>;
-                        quick-tap-ms = <300>;                        
-                        bindings = <&mo_fmedia_lett>, <&to>;
-                };
-  
-                mo_nav_num_to: mo_nav_num_to {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "mo_nav_num_to";
-                        #binding-cells = <2>;
-                        flavor = "hold-preferred";
-                        tapping-term-ms = <150>;
-                        quick-tap-ms = <300>;                        
-                        bindings = <&mo_nav_num>, <&to>;
-                };
-  
-                mo_fmedia_num_to: mo_fmedia_num_to {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "mo_fmedia_num_to";
-                        #binding-cells = <2>;
-                        flavor = "hold-preferred";
-                        tapping-term-ms = <150>;
-                        quick-tap-ms = <300>;                        
-                        bindings = <&mo_fmedia_num>, <&to>;
-                };
-  
-                mo_nav_mou_to: mo_nav_mou_to {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "mo_nav_mou_to";
-                        #binding-cells = <2>;
-                        flavor = "hold-preferred";
-                        tapping-term-ms = <150>;
-                        quick-tap-ms = <300>;                        
-                        bindings = <&mo_nav_mou>, <&to>;
-                };
-  
-                mo_fmedia_mou_to: mo_fmedia_mou_to {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "mo_fmedia_mou_to";
-                        #binding-cells = <2>;
-                        flavor = "hold-preferred";
-                        tapping-term-ms = <150>;
-                        quick-tap-ms = <300>;                        
-                        bindings = <&mo_fmedia_mou>, <&to>;
-                };
-  
-                mo_nav_fmedia_to: mo_nav_fmedia_to {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "mo_nav_fmedia_to";
-                        #binding-cells = <2>;
-                        flavor = "hold-preferred";
-                        tapping-term-ms = <150>;
-                        quick-tap-ms = <300>;                        
-                        bindings = <&mo_nav_fmedia>, <&to>;
-                };
-
-                mo_fmedia_fmedia_to: mo_fmedia_fmedia_to {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "mo_fmedia_fmedia_to";
-                        #binding-cells = <2>;
-                        flavor = "hold-preferred";
-                        tapping-term-ms = <150>;
-                        quick-tap-ms = <300>;                        
-                        bindings = <&mo_fmedia_fmedia>, <&to>;
-                };
-
-                mo_nav_nav_to: mo_nav_nav_to {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "mo_nav_nav_to";
-                        #binding-cells = <2>;
-                        flavor = "hold-preferred";
-                        tapping-term-ms = <150>;
-                        quick-tap-ms = <300>;                        
-                        bindings = <&mo_nav_nav>, <&to>;
-                };
-
-                mo_fmedia_nav_to: mo_fmedia_nav_to {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "mo_fmedia_nav_to";
-                        #binding-cells = <2>;
-                        flavor = "hold-preferred";
-                        tapping-term-ms = <150>;
-                        quick-tap-ms = <300>;                        
-                        bindings = <&mo_fmedia_nav>, <&to>;
-                };
-                */
-
                 lok1: layer_or_keypress1 {
                         compatible = "zmk,behavior-hold-tap";
                         label = "LAYER_OR_KEYPRESS1";
@@ -634,7 +435,23 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                 &none   &kp W         &kp L        &kp R         &kp B        &kp Z                      &kp SEMICOLON       &kp Q        &kp U         &kp D        &kp J  &none
                 &none   &hml LCTL S  &hml LALT H  &hml LSHIFT N  &hml LGUI T  &comma_lpar                &dot_rpar   &hmr LGUI A  &hmr LSHIFT E  &hmr LALT O  &hmr LCTL I  &kp LG(D)
                 &none   &kp F         &kp M        &kp V         &kp C        &kp SLASH                  &kp G               &kp P        &kp X         &kp K        &kp Y  &none   
-                                        &none  &mo NAVIGATION  &mo_to mo_fmedia_lett NAVIGATION    &num_bspc &mouse_space &none
+                                                                            &none  &mo_to NAVIGATION LETTERS   &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
+                        >;
+                };
+
+                navigation {
+//              /* NAVIGATION
+//              _______________________________________________________________________________________________________
+//              |    |Esc   |F2    |Ctrl-A| Ctrl-Y |  Ctrl-Z  |             |Insert  |Home     |  Up  |End     |Delete |    |
+//              |    |Ctrl  |Alt   |Shift |  Tab   |   Win    |             |Enter   |Left     | Down |Right   |       |    |
+//              |    |Ctrl-Z|Ctrl-X|Ctrl-V| Ctrl-C |    `     |             |DropDown|         |PageUp|PageDown|       |    |
+//                                                       |Nav|Nav/Num| |Bspc/F_Media|Space/Mouse| 
+
+                        bindings = <
+                        &none   &kp ESC    &kp F2     &kp LC(A)  &kp LC(Y)   &kp LC(Z)                 &kp INS &kp HOME   &kp UP    &kp END    &kp DEL    &none  
+                        &none   &kp LCTRL  &kp LALT   &kp LSHIFT &kp LGUI    &kp TAB                  &kp ENTER   &kp LEFT   &kp DOWN  &kp RIGHT  &none      &kp LG(D)   
+                        &none   &kp LC(Z)  &kp LC(X)  &kp LC(V)  &kp LC(C)   &kp GRAVE                 &kp LS(F10) &none  &kp PG_UP &kp PG_DN  &none      &none   
+                                                                       &none  &mo_to NAVIGATION LETTERS   &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
                         >;
                 };
 
@@ -652,7 +469,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         &none   &kp N1          &kp N2         &kp N3         &kp N4         &kp N5                &kp N6    &kp N7    &kp N8     &N9_LT    &N0_GT   &none   
                         &none   &kp LCTRL       &kp LALT       &kp LSHIFT     &kp LGUI       &kp TAB               &kp TAB   &kp LGUI  &kp LSHIFT &kp LALT  &kp LCTRL   &kp LG(D)    
                         &none   &kp GRAVE       &comma_lpar    &dot_rpar      &kp SQT        &kp BACKSLASH         &kp SEMI  &kp LBKT  &kp MINUS  &kp EQUAL &kp RBKT &none   
-                                                                                &none  &mo_to mo_nav_num LETTERS   &mo_to mo_fmedia_num NAVIGATION    &num_bspc &mouse_space &none
+                                                                                      &none  &mo_to NAVIGATION LETTERS   &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
                         >;
                 };
 
@@ -665,10 +482,10 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 //                                              |Nav|Nav/Num| |Bspc/F_Media|Space/Mouse| 
 
                         bindings = <
-                        &none   &kp ESC    &none    &none      &mkp LCLK   &none                        &none   &none                 &mmv MOVE_VERT(-1000)   &none                &none                &none   
-                        &none   &kp LCTRL  &kp LALT &kp LSHIFT &kp LGUI    &kp TAB                      &none   &mmv MOVE_HOR(-1000)  &mmv MOVE_VERT(1000)  &mmv MOVE_HOR(1000)    &mkp RCLK            &kp LG(D)   
-                        &none   &none      &none    &none      &none       &none                        &none   &mwh SCROLL_HOR(-15)  &mwh SCROLL_VERT(15)   &mwh SCROLL_VERT(-15)  &mwh SCROLL_HOR(15)  &none   
-                                &none  &mo_to mo_nav_mou LETTERS   &mo_to mo_fmedia_mou NAVIGATION    &num_bspc &mouse_space &none
+                        &none   &kp ESC    &none    &none      &mkp LCLK   &none               &none   &none                 &mmv MOVE_VERT(-1000)   &none                &none                &none   
+                        &none   &kp LCTRL  &kp LALT &kp LSHIFT &kp LGUI    &kp TAB             &none   &mmv MOVE_HOR(-1000)  &mmv MOVE_VERT(1000)  &mmv MOVE_HOR(1000)    &mkp RCLK            &kp LG(D)   
+                        &none   &none      &none    &none      &none       &none               &none   &mwh SCROLL_HOR(-15)  &mwh SCROLL_VERT(15)   &mwh SCROLL_VERT(-15)  &mwh SCROLL_HOR(15)  &none   
+                                                              &none  &mo_to NAVIGATION LETTERS   &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
                         >;
                 };
 
@@ -684,7 +501,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         &none   &kp F1     &kp F2   &kp F3     &kp F4      &kp F5                &kp C_BRI_DN  &kp C_BRI_UP  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none   
                         &none   &kp LCTRL  &kp LALT &kp LSHIFT &kp LGUI    &kp TAB               &kp TAB       &kp LGUI      &kp LSHIFT  &kp LALT      &kp LCTRL     &kp LG(D)   
                         &none   &kp F6     &kp F7   &kp F8     &kp F9      &kp F10               &kp LS(F10)   &kp F11       &kp F12     &none         &none         &none   
-                                                      &none  &mo_to mo_nav_fmedia LETTERS   &mo_to mo_fmedia_fmedia NAVIGATION    &num_bspc &mouse_space &none
+                                                                &none  &mo_to NAVIGATION LETTERS   &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
                         >;
                 };
 
@@ -704,23 +521,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         &none   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR              &none   &none   &none   &none   &none   &none   
                         &none   &bt BT_SEL 4    &none         &none         &none         &none                   &none   &none   &none   &none   &none   &kp LG(D)
                         &none   &none           &none         &none         &none         &none                   &none   &none   &none   &none   &none   &none   
-                                                                     &none  &to LETTERS   &to NAVIGATION    &num_bspc &mouse_space &none
-                        >;
-                };
-
-                navigation {
-//              /* NAVIGATION
-//              _______________________________________________________________________________________________________
-//              |    |Esc   |F2    |Ctrl-A| Ctrl-Y |  Ctrl-Z  |             |Insert  |Home     |  Up  |End     |Delete |    |
-//              |    |Ctrl  |Alt   |Shift |  Tab   |   Win    |             |Enter   |Left     | Down |Right   |       |    |
-//              |    |Ctrl-Z|Ctrl-X|Ctrl-V| Ctrl-C |    `     |             |DropDown|         |PageUp|PageDown|       |    |
-//                                                       |Nav|Nav/Num| |Bspc/F_Media|Space/Mouse| 
-
-                        bindings = <
-                        &none   &kp ESC    &kp F2     &kp LC(A)  &kp LC(Y)   &kp LC(Z)                 &kp INS &kp HOME   &kp UP    &kp END    &kp DEL    &none  
-                        &none   &kp LCTRL  &kp LALT   &kp LSHIFT &kp LGUI    &kp TAB                  &kp ENTER   &kp LEFT   &kp DOWN  &kp RIGHT  &none      &kp LG(D)   
-                        &none   &kp LC(Z)  &kp LC(X)  &kp LC(V)  &kp LC(C)   &kp GRAVE                 &kp LS(F10) &none  &kp PG_UP &kp PG_DN  &none      &none   
-                                                           &none  &mo_to mo_nav_nav LETTERS   &mo_to mo_fmedia_nav NAVIGATION     &num_bspc &mouse_space &none
+                                                                               &none  &mo_to NAVIGATION LETTERS   &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
                         >;
                 };
 
