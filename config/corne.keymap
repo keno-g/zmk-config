@@ -100,19 +100,19 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         combo_letters_layer {
                                 timeout-ms = <20>;
                                 key-positions = <25 26>;
-                                bindings = <&to LETTERS>;                      
+                                bindings = <&tog LETTERS>;                      
                         };
 
                         combo_navigation_layer {
                                 timeout-ms = <20>;
                                 key-positions = <27 28>;
-                                bindings = <&to NAVIGATION>;                      
+                                bindings = <&tog NAVIGATION>;                      
                         };
 
                         combo_bluetooth_layer {
                                 timeout-ms = <20>;
                                 key-positions = <30 31 32>;
-                                bindings = <&to BLUETOOTH>;                      
+                                bindings = <&tog BLUETOOTH>;                      
                         };
 
         };
@@ -221,7 +221,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         #binding-cells = <2>;
                         flavor = "hold-preferred";
                         tapping-term-ms = <20>;
-                        bindings = <&mo>, <&to>;
+                        bindings = <&mo>, <&tog>;
                 };
                 */
 
@@ -232,7 +232,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         #binding-cells = <2>;
                         flavor = "hold-preferred";
                         tapping-term-ms = <200>;
-                        bindings = <&to>, <&to>;
+                        bindings = <&tog>, <&tog>;
                 };
                 */
 
@@ -243,7 +243,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         label = "NUM_LETTER";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&mo_to_layer NUMBERS LETTERS>, <&to NUMBERS>;  
+                        bindings = <&mo_to_layer NUMBERS LETTERS>, <&tog NUMBERS>;  
                 };
                 */
 
@@ -254,7 +254,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         flavor = "hold-preferred";
                         tapping-term-ms = <150>;
                         quick-tap-ms = <300>;                        
-                        bindings = <&mo>, <&to>;
+                        bindings = <&mo>, <&tog>;
                 };
 
                     /*
@@ -341,7 +341,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         label = "NUM_BSPC";
                         #binding-cells = <0>;
                         tapping-term-ms = <150>;
-                        bindings = <&lok1 NUMBERS BSPC>, <&to NUMBERS>; 
+                        bindings = <&lok1 NUMBERS BSPC>, <&tog NUMBERS>; 
                 };
 
                 //Press Go to Space | Hold Momentary Mouse | Tap-Dance Space | Tap-Dance Mouse --> two taps = space, three taps goes to mouse layer
@@ -350,7 +350,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         label = "MOUSE_SPACE";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&lok2 MOUSE SPACE>, <&kp SPACE>, <&to MOUSE>;
+                        bindings = <&lok2 MOUSE SPACE>, <&kp SPACE>, <&tog MOUSE>;
                 };
 
                 /*
