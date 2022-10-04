@@ -19,10 +19,6 @@
 #define F_MEDIA     4
 #define BLUETOOTH   5
 
-/*
-&lt {  // layer tap config
-};
-*/
 
 &sk {
      quick-release;
@@ -119,36 +115,6 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 
         macros {
         
-        /*
-                //Macro to type £
-                sterling: sterling {
-                label = "ZM_STERLING";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                wait-ms = <20>;
-                tap-ms = <20>;
-                bindings
-                        = <&macro_press   &kp LALT>
-                        , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N6 &kp KP_N3>
-                        , <&macro_release &kp LALT>
-                        ;
-                };
-                
-                //Macro to type €
-                euro: euro {
-                label = "ZM_EURO";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                wait-ms = <20>;
-                tap-ms = <20>;
-                bindings
-                        = <&macro_press   &kp LALT>
-                        , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N2 &kp KP_N8>
-                        , <&macro_release &kp LALT>
-                        ;
-                };
-        */
-
         };
 
 
@@ -201,51 +167,8 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         mods = <(MOD_LSFT)>;
                 };
 
-                /*
-                //Mod-Morph to input &mo_to NAVIGATION NAVIGATION or (with shift) TAB 
-                nav_letter: nav_letter {
-                        compatible = "zmk,behavior-mod-morph";
-                        label = "&NAV_LETTER";
-                        #binding-cells = <0>;
-                        bindings = <&mo_to NAVIGATION NAVIGATION>, <&kp TAB>;
-                        mods = <(MOD_LCTL|MOD_LALT|MOD_LSFT|MOD_LGUI)>;
-                };
-                */
 
         //Hold_Tap
-
-                /*
-                mo_to_layer: mo_to_layer {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "&MO_TO_LAYER";
-                        #binding-cells = <2>;
-                        flavor = "hold-preferred";
-                        tapping-term-ms = <20>;
-                        bindings = <&mo>, <&to>;
-                };
-                */
-
-                /* 
-                to_nav: to_nav {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "&TO_NAV";
-                        #binding-cells = <2>;
-                        flavor = "hold-preferred";
-                        tapping-term-ms = <200>;
-                        bindings = <&to>, <&to>;
-                };
-                */
-
-                //Press Go to Letters | Hold Momentary Numbers | Tap-Dance Go to Numbers 
-                /*
-                num_letter: num_letter {
-                        compatible = "zmk,behavior-tap-dance";
-                        label = "NUM_LETTER";
-                        #binding-cells = <0>;
-                        tapping-term-ms = <200>;
-                        bindings = <&mo_to_layer NUMBERS LETTERS>, <&to NUMBERS>;  
-                };
-                */
 
                 mo_to: mo_to {
                         compatible = "zmk,behavior-hold-tap";
@@ -257,43 +180,6 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         bindings = <&mo>, <&to>;
                 };
 
-                    /*
-                    nav_letter: nav_letter {
-                            label = "NAV_LETTER";
-                            #binding-cells = <0>;
-                            tapping-term-ms = <20>;
-                            bindings = <&mo_to NAVIGATION LETTERS>;
-                    };
-
-
-                    F_media_nav: F_media_nav {
-                            label = "F_MEDIA_NAV";
-                            #binding-cells = <0>;
-                            tapping-term-ms = <20>;
-                            bindings = <&mo_to F_MEDIA NAVIGATION>;  
-                    };
-                    *
-
-                /*
-                //Press Go to Backspace | Hold Momentary Numbers | Tap-Dance Backspace | Tap-Dance Numbers --> two taps = backspace, three taps goes to numbers layer
-                num_bspc1: num_bspc1 {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "NUM_BSPC1";
-                        #binding-cells = <2>;
-                        flavor = "hold-preferred";
-                        tapping-term-ms = <20>;
-                        quick-tap-ms = <300>;                        
-                        bindings = <&mo>, <&kp>;
-                };
-                
-
-                    num_bspc: num_bspc {
-                            label = "NUM_BSPC";
-                            #binding-cells = <0>;
-                            tapping-term-ms = <20>;
-                            bindings = <&num_bspc1 NUMBERS (tap_num_bspc)>;  
-                    };
-                */
                 
                 lok1: layer_or_keypress1 {
                         compatible = "zmk,behavior-hold-tap";
@@ -315,25 +201,6 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                 };
 
         //Tap-Dance
-                /*
-                //Press Go to Letter | Hold Momentary Navigation | (Tap-Dance currently inactive)
-                tap_nav_letter: tap_nav_letter {
-                        compatible = "zmk,behavior-tap-dance";
-                        label = "TAP_NAV_LETTER";
-                        #binding-cells = <0>;
-                        tapping-term-ms = <200>;
-                        bindings = <&mo_to NAVIGATION LETTERS>;
-                };
-
-                //Press Go to Navigation | Hold Momentary F_Media | (Tap-Dance currently inactive)
-                tap_F_media_nav: tap_F_media_nav {
-                        compatible = "zmk,behavior-tap-dance";
-                        label = "TAP_F_MEDIA_NAV";
-                        #binding-cells = <0>;
-                        tapping-term-ms = <200>;
-                        bindings = <&mo_to F_MEDIA NAVIGATION>;  
-                };
-                */
 
                 //Press Go to Backspace | Hold Momentary Numbers | Tap-Dance Numbers
                 num_bspc: num_bspc {
@@ -353,26 +220,6 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         bindings = <&lok2 MOUSE SPACE>, <&kp SPACE>, <&to MOUSE>;
                 };
 
-                /*
-                //Tap-Dance to input # and £ 
-                hash_sterling: hash_sterling {
-                        compatible = "zmk,behavior-tap-dance";
-                        label = "HASH_STERLING";
-                        #binding-cells = <0>;
-                        tapping-term-ms = <200>;
-                        bindings = <&kp HASH>, <&sterling>;
-                };
-
-                //Tap-Dance to input $ and € 
-                dollar_euro: dollar_euro {
-                        compatible = "zmk,behavior-tap-dance";
-                        label = "DOLLAR_EURO";
-                        #binding-cells = <0>;
-                        tapping-term-ms = <200>;
-                        bindings = <&kp DOLLAR>, <&euro>;
-                };
-                */
-                
 
 // Key Positions Index for Combos
 // ________________________________________________________________________________________________________
