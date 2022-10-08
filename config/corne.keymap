@@ -149,12 +149,12 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         mods = <(MOD_LSFT)>;
                 };
                
-                //Mod-Morph to input period or (with shift) close parenthesis in HALMAK layout
+                //Mod-Morph to input period or (with shift) close parenthesis in HALMAK layout, and Hold = ENTER
                 dot_rpar: dot_rpar {
                         compatible = "zmk,behavior-mod-morph";
                         label = "DOT_RPAR";
                         #binding-cells = <0>;
-                        bindings = <&kp PERIOD>, <&kp RPAR>;
+                        bindings = <&hota ENTER PERIOD>, <&kp RPAR>;
                         mods = <(MOD_LSFT)>;
                 };
                
@@ -180,9 +180,9 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         bindings = <&mo>, <&to>;
                 };
 
-                ht: holdtap {
+                hota: holdtap1 {
                         compatible = "zmk,behavior-hold-tap";
-                        label = "HOLDTAP";
+                        label = "HOLDTAP1";
                         #binding-cells = <2>;
                         flavor = "hold-preferred";
                         tapping-term-ms = <150>;
@@ -288,9 +288,9 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 //                                              |Nav|Nav/Num| |Bspc/F_Media|Space/Mouse| 
 
                                         bindings = <
-                &none   &kp W         &kp L          &kp R         &kp B        &kp Z                      &kp SEMICOLON       &kp Q        &kp U         &kp D        &kp J  &none
-                &none   &hml LCTL S   &hml LSHIFT H  &hml LALT N   &hml LGUI T  &comma_lpar                &ht ENTER dot_rpar  &hmr LGUI A  &hmr LALT E  &hmr LSHIFT O &hmr LCTL I  &kp LG(D)
-                &none   &kp F         &kp M          &kp V         &kp C        &kp SLASH                  &kp G               &kp P        &kp X         &kp K        &kp Y  &none   
+                &none   &kp W         &kp L          &kp R         &kp B        &kp Z                      &kp SEMICOLON        &kp Q        &kp U         &kp D        &kp J  &none
+                &none   &hml LCTL S   &hml LSHIFT H  &hml LALT N   &hml LGUI T  &comma_lpar                &dot_rpar_enter      &hmr LGUI A  &hmr LALT E  &hmr LSHIFT O &hmr LCTL I  &kp LG(D)
+                &none   &kp F         &kp M          &kp V         &kp C        &kp SLASH                  &kp G                &kp P        &kp X         &kp K        &kp Y  &none   
                                                                             &none  &mo_to NAVIGATION LETTERS   &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
                         >;
                 };
