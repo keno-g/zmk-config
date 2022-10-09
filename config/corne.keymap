@@ -125,7 +125,8 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         bindings
                                 = <&macro_press &to LETTERS &to NAVIGATION>
                                 , <&macro_pause_for_release>
-                                , <&macro_release &to LETTERS &to NUMBERS>;
+                                , <&macro_release &to LETTERS>
+                                , <&to LETTERS &to NUMBERS>;
                         };
 
                 //back to mouse
@@ -137,7 +138,8 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         bindings
                                 = <&macro_press &to LETTERS &to NAVIGATION>
                                 , <&macro_pause_for_release>
-                                , <&macro_release &to LETTERS &to MOUSE>;
+                                , <&macro_release &to LETTERS>
+                                , <&to LETTERS &to MOUSE>;
                         };
 
                 //back to navigation
@@ -149,9 +151,10 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         bindings
                                 = <&macro_press &to LETTERS &to NAVIGATION>
                                 , <&macro_pause_for_release>
-                                , <&macro_release &to LETTERS &to NAVIGATION>;
-                        };
+                                , <&macro_release &to LETTERS>
+                                , <&to LETTERS &to NAVIGATION>;
 
+                        };
        
         };
 
