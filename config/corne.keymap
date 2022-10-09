@@ -225,7 +225,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         flavor = "hold-preferred";
                         tapping-term-ms = <150>;
                         quick-tap-ms = <300>;                        
-                        bindings = <&mo_nav_num>, <&to LETTERS>;
+                        bindings = <&mo_nav_num>, <&to>;
                 };
 
                 mo_nav_mou_to: mo_nav_mou_to {
@@ -235,7 +235,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         flavor = "hold-preferred";
                         tapping-term-ms = <150>;
                         quick-tap-ms = <300>;                        
-                        bindings = <&mo_nav_mou>, <&to LETTERS>;
+                        bindings = <&mo_nav_mou>, <&to>;
                 };
 
                 mo_nav_nav_to: mo_nav_nav_to {
@@ -245,7 +245,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         flavor = "hold-preferred";
                         tapping-term-ms = <150>;
                         quick-tap-ms = <300>;                        
-                        bindings = <&mo_nav_nav>, <&to LETTERS>;
+                        bindings = <&mo_nav_nav>, <&to>;
                 };
 
                 hota: holdtap1 {
@@ -375,7 +375,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         &none   &kp ESC    &kp F2     &kp LC(A)  &kp LC(Y)   &kp LC(Z)                 &kp INS &kp HOME   &kp UP    &kp END    &kp DEL    &none  
                         &none   &kp LCTRL  &kp LSHIFT &kp LALT   &kp LGUI    &kp TAB                   &kp ENTER   &kp LEFT   &kp DOWN  &kp RIGHT  &none      &kp LG(D)   
                         &none   &kp LC(Z)  &kp LC(X)  &kp LC(V)  &kp LC(C)   &kp GRAVE                 &kp LS(F10) &none  &kp PG_UP &kp PG_DN  &none      &none   
-                                                                       &none  &mo_nav_nav_to   &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
+                                                                       &none  &mo_nav_nav_to 0 LETTERS   &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
                         >;
                 };
 
@@ -393,7 +393,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         &none   &kp N1          &kp N2         &kp N3         &kp N4         &kp N5                &kp N6    &kp N7    &kp N8     &N9_LT      &N0_GT   &none   
                         &none   &kp LCTRL       &kp LSHIFT     &kp LALT       &kp LGUI       &kp TAB             &kp ENTER   &kp LGUI  &kp LALT &kp LSHIFT  &kp LCTRL   &kp LG(D)    
                         &none   &kp GRAVE       &comma_lpar    &dot_rpar      &kp SQT        &kp BACKSLASH         &kp SEMI  &kp LBKT  &kp MINUS  &kp EQUAL   &kp RBKT &none   
-                                                                                      &none  &mo_nav_num_to   &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
+                                                                                      &none  &mo_nav_num_to 0 LETTERS   &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
                         >;
                 };
 
@@ -409,7 +409,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         &none   &kp ESC    &none      &none      &mkp LCLK   &none               &none     &none                 &mmv MOVE_VERT(-1000)  &none                &none                &none   
                         &none   &kp LCTRL  &kp LSHIFT &kp LALT   &kp LGUI    &kp TAB             &kp ENTER &mmv MOVE_HOR(-1000)  &mmv MOVE_VERT(1000)   &mmv MOVE_HOR(1000)    &mkp RCLK            &kp LG(D)   
                         &none   &none      &none      &none      &none       &none               &none     &mwh SCROLL_HOR(-15)  &mwh SCROLL_VERT(15)   &mwh SCROLL_VERT(-15)  &mwh SCROLL_HOR(15)  &none   
-                                                                  &none  &mo_nav_mou_to      &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
+                                                                  &none  &mo_nav_mou_to 0 LETTERS      &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
                         >;
                 };
 
