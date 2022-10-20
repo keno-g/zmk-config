@@ -1,4 +1,4 @@
-/* f17.2 to 18
+/* f17.2 to 18.5
 /*
  * Copyright (c) 2020 The ZMK Contributors
 
@@ -123,7 +123,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         #binding-cells = <0>;
                         wait-ms = <0>;
                         bindings
-                                = <&macro_press &kp LALT  &kp TAB>;
+                                = <&kp LALT  &kp TAB>;
                         };
 
                 /*
