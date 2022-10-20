@@ -1,4 +1,4 @@
-/* f17.2 to 18.3
+/* f17.2 to 18
 /*
  * Copyright (c) 2020 The ZMK Contributors
 
@@ -117,16 +117,14 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
         macros {
              //Macros to emulate &mo behaviour
                 //back to numbers
-                /*
                 alttab: alttab {
                         label = "ZM_alttab";
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         wait-ms = <0>;
                         bindings
-                                = <&kp LALT  &kp TAB>;
+                                = <&macro_press &kp LALT  &kp TAB>;
                         };
-                */
 
                 /*
                 mo_nav_num: mo_nav_num {
@@ -441,7 +439,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 
                         bindings = <
                         &none   &kp F1     &kp F2     &kp F3     &kp F4      &kp F5                &kp C_BRI_DN  &kp C_BRI_UP  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none   
-                        &none   &kp LCTRL  &kp LSHIFT &kp LALT   &kp LGUI    &kp TAB              &kp ENTER     &kp LGUI      &kp LALT  &kp LSHIFT      &kp LCTRL     &kp LG(D)   
+                        &none   &kp LCTRL  &kp LSHIFT &kp LALT   &kp LGUI    &alttab              &kp ENTER     &kp LGUI      &kp LALT  &kp LSHIFT      &kp LCTRL     &kp LG(D)   
                         &none   &kp F6     &kp F7     &kp F8     &kp F9      &kp F10               &kp LS(F10)   &kp F11       &kp F12     &none         &none         &none   
                                  &mo NAVIGATION  &to LETTERS   &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
                         >;
