@@ -1,4 +1,4 @@
-/* f17.2 to 18.5
+/* f18.5 to 19
 /*
  * Copyright (c) 2020 The ZMK Contributors
 
@@ -92,18 +92,6 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         key-positions = <30 31>;
                         layers = <BLUETOOTH>;
                         bindings = <&bootloader>;                      
-                };
-
-                combo_letters_layer {
-                        timeout-ms = <20>;
-                        key-positions = <25 26>;
-                        bindings = <&to LETTERS>;                      
-                };
-
-                combo_navigation_layer {
-                        timeout-ms = <20>;
-                        key-positions = <27 28>;
-                        bindings = <&to NAVIGATION>;                      
                 };
 
                 combo_bluetooth_layer {
@@ -222,6 +210,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 
         //Hold_Tap
 
+                /*
                 mo_to: mo_to {
                         compatible = "zmk,behavior-hold-tap";
                         label = "MO_TO";
@@ -232,7 +221,6 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         bindings = <&mo>, <&to>;
                 };
 
-                /*
                 mo_nav_num_to: mo_nav_num_to {
                         compatible = "zmk,behavior-hold-tap";
                         label = "mo_nav_num_TO";
@@ -297,6 +285,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
         //Tap-Dance
 
                 //Press Go to Backspace | Hold Momentary Numbers | Tap-Dance Numbers
+                /*
                 num_bspc: num_bspc {
                         compatible = "zmk,behavior-tap-dance";
                         label = "NUM_BSPC";
@@ -304,6 +293,7 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
                         tapping-term-ms = <150>;
                         bindings = <&lok1 NUMBERS BSPC>, <&to NUMBERS>; 
                 };
+                */
 
                 //Press Go to Space | Hold Momentary Mouse | Tap-Dance Space | Tap-Dance Mouse --> two taps = space, three taps goes to mouse layer
                 mouse_space: mouse_space {
@@ -368,14 +358,13 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 //HR Mods       |    |Ctrl |Shift| Alt |  Win |Tab   |             |Enter|Win  | Alt |Shift|Ctrl |    |
 
 //              |    |  f  |  m  |  v  |  c   |  /?  |             | g  |  p  |  x  |  k  |  y  |    |
-//Combo         |    |  Letters  |  Numbers   |      |             |    |     |     |     |     |    |
-//                                              |Nav|Nav/Num| |Bspc/F_Media|Space/Mouse| 
+//                                     |F_Med | Let  | Nav | | Bspc|Space/Mouse|Num|
 
                                         bindings = <
                 &none   &kp W         &kp L          &kp R         &kp B        &kp Z                      &kp SEMICOLON        &kp Q        &kp U         &kp D        &kp J  &none
                 &none   &hml LCTL S   &hml LSHIFT H  &hml LALT N   &hml LGUI T  &comma_lpar                &dot_rpar      &hmr LGUI A  &hmr LALT E  &hmr LSHIFT O &hmr LCTL I  &kp LG(D)
                 &none   &kp F         &kp M          &kp V         &kp C        &kp SLASH                  &kp G                &kp P        &kp X         &kp K        &kp Y  &none   
-                                        &mo NAVIGATION  &to LETTERS   &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
+                                                        &to F_MEDIA  &to LETTERS   &to NAVIGATION    &to BSPC &mouse_space &to NUMBERS
                         >;
                 };
 
@@ -385,13 +374,13 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 //              |    |Esc   |F2    |Ctrl-A| Ctrl-Y |  Ctrl-Z  |             |Insert  |Home     |  Up  |End     |Delete |    |
 //              |    |Ctrl  |Shift | Alt  |  Tab   |   Win    |             |Enter   |Left     | Down |Right   |       |    |
 //              |    |Ctrl-Z|Ctrl-X|Ctrl-V| Ctrl-C |    `     |             |DropDown|         |PageUp|PageDown|       |    |
-//                                                       |Nav|Nav/Num| |Bspc/F_Media|Space/Mouse| 
+//                                        | F_Media|   Let    |Nav|    |Bspc|Space/Mouse|Num|
 
                         bindings = <
                         &none   &kp ESC    &kp F2     &kp LC(A)  &kp LC(Y)   &kp LC(Z)                 &kp INS &kp HOME   &kp UP    &kp END    &kp DEL    &none  
                         &none   &kp LCTRL  &kp LSHIFT &kp LALT   &kp LGUI    &kp TAB                   &kp ENTER   &kp LEFT   &kp DOWN  &kp RIGHT  &none      &kp LG(D)   
                         &none   &none      &kp LC(X)  &kp LC(V)  &kp LC(C)   &kp GRAVE                 &kp LS(F10) &none  &kp PG_UP &kp PG_DN  &none      &none   
-                                        &mo NAVIGATION  &to LETTERS   &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
+                                                       &to F_MEDIA  &to LETTERS   &to NAVIGATION    &to BSPC &mouse_space &to NUMBERS
                         >;
                 };
 
@@ -402,14 +391,14 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 //              |     |     |   Shift   |      |         |             |     |     |     |     |     |    |
 //
 //              |     |Ctrl |Shift| Alt |  Win |Tab |                  |Enter|Win  | Alt |Shift|Ctrl |    |
-//              |     | ` ~ | , ( | . ) | ' "  |  \ |    |             | ; : | [ { | - _ | = + | ] } |    |
-//                                               |Nav|Nav/Num| |Bspc/F_Media|Space/Mouse| 
+//              |     | ` ~ | , ( | . ) | ' "  |  \ |                  | ; : | [ { | - _ | = + | ] } |    |
+//                                      |F_Media|Let|Nav|         |Bspc|Space/Mouse|Num|
 
                         bindings = <
                         &none   &kp N1          &kp N2         &kp N3         &kp N4         &kp N5                &kp N6    &kp N7    &kp N8     &N9_LT      &N0_GT   &none   
-                        &none   &kp LCTRL       &kp LSHIFT     &kp LALT       &kp LGUI       &kp TAB             &kp ENTER   &kp LGUI  &kp LALT &kp LSHIFT  &kp LCTRL   &kp LG(D)    
+                        &none   &kp LCTRL       &kp LSHIFT     &kp LALT       &kp LGUI       &kp TAB               &kp ENTER   &kp LGUI  &kp LALT &kp LSHIFT  &kp LCTRL   &kp LG(D)    
                         &none   &kp GRAVE       &comma_lpar    &dot_rpar      &kp SQT        &kp BACKSLASH         &kp SEMI  &kp LBKT  &kp MINUS  &kp EQUAL   &kp RBKT &none   
-                                                      &mo NAVIGATION  &to LETTERS   &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
+                                                                    &to F_MEDIA  &to LETTERS   &to NAVIGATION    &to BSPC &mouse_space &to NUMBERS
                         >;
                 };
 
@@ -419,13 +408,13 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 //              |    |    |     |   |LeftClick|         |             |     |          |MouseUp  |          |           |    |
 //              |    |Ctrl|Shift|Alt|  Win    |   Tab   |             |Enter|MouseLeft |MouseDown|MouseRight|RightClick |    |
 //              |    |    |     |   |         |         |             |     |ScrollLeft|ScrollUp |ScrollDown|ScrollRight|    |
-//                                              |Nav|Nav/Num| |Bspc/F_Media|Space/Mouse| 
+//                                          |F_Media|Let|Nav|    |Bspc|Space/Mouse|Num|
 
                         bindings = <
                         &none   &kp ESC    &none      &none      &mkp LCLK   &none               &none     &none                 &mmv MOVE_VERT(-1000)  &none                &none                &none   
                         &none   &kp LCTRL  &kp LSHIFT &kp LALT   &kp LGUI    &kp TAB             &kp ENTER &mmv MOVE_HOR(-1000)  &mmv MOVE_VERT(1000)   &mmv MOVE_HOR(1000)    &mkp RCLK            &kp LG(D)   
                         &none   &none      &none      &none      &none       &none               &none     &mwh SCROLL_HOR(-15)  &mwh SCROLL_VERT(15)   &mwh SCROLL_VERT(-15)  &mwh SCROLL_HOR(15)  &none   
-                                 &mo NAVIGATION  &to LETTERS      &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
+                                                    &to F_MEDIA  &to LETTERS   &to NAVIGATION    &to BSPC &mouse_space &to NUMBERS
                         >;
                 };
 
@@ -435,13 +424,13 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 //              |    |  F1  |  F2  |  F3  |  F4  |  F5     |             |BrightDown|BrightUp|VolMute|VolDown|VolUp |    |
 //              |    |Ctrl  |Shift |  Alt |  Win |  Tab    |             |Enter     |Win     | Alt   |Shift  |Ctrl  |    |
 //              |    |  F6  |  F7  |  F8  |  F9  |  F10    |             |DropDown  |  F11   |  F12  |       |      |    |
-//                                                 |Nav|Nav/Num| |Bspc/F_Media|Space/Mouse| 
+//                                        |F_Media|   Let  |Nav|    |Bspc|Space/Mouse|Num|
 
                         bindings = <
                         &none   &kp F1     &kp F2     &kp F3     &kp F4      &kp F5                &kp C_BRI_DN  &kp C_BRI_UP  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none   
                         &none   &kp LCTRL  &kp LSHIFT &kp LALT   &kp LGUI    &alttab              &kp ENTER     &kp LGUI      &kp LALT  &kp LSHIFT      &kp LCTRL     &kp LG(D)   
                         &none   &kp F6     &kp F7     &kp F8     &kp F9      &kp F10               &kp LS(F10)   &kp F11       &kp F12     &none         &none         &none   
-                                 &mo NAVIGATION  &to LETTERS   &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
+                                                    &to F_MEDIA  &to LETTERS   &to NAVIGATION    &to BSPC &mouse_space &to NUMBERS
                         >;
                 };
 
@@ -455,13 +444,13 @@ continue-list = <UNDERSCORE BSPC MINUS PERIOD SLASH>;
 //              |    |    |    |    |      |              |        |    |     |    |    |    |    |
 //              |    |    |    |    |      |              |        |Bootloader|    |    |    |    |
 //
-//                                             |Nav|Nav/Num| |Bspc/F_Media|Space/Mouse| 
+//                                      |F_Media|Let|Nav|         |Bspc|Space/Mouse|Num|
 
                         bindings = <
                         &none   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR              &none   &none   &none   &none   &none   &none   
                         &none   &bt BT_SEL 4    &none         &none         &none         &none                   &none   &none   &none   &none   &none   &kp LG(D)
                         &none   &none           &none         &none         &none         &none                   &none   &none   &none   &none   &none   &none   
-                                                &mo NAVIGATION  &to LETTERS   &mo_to F_MEDIA NAVIGATION    &num_bspc &mouse_space &none
+                                                        &to F_MEDIA  &to LETTERS   &to NAVIGATION    &to BSPC &mouse_space &to NUMBERS
                         >;
                 };
 
